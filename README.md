@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Introduction
+## Why another portfolio platform?
+For most programmers/coders GitHub is the go-to platform for showcasing their projects. But GitHub is not a portfolio platform. It just doesn't give the coder enough freedom to showcase their work the way they want.
 
-## Getting Started
+Don't get me wrong, GitHub is an industry standard and my go-to platform for hosting code. But I wanted a portfolio platform that is more flexible and customizable, something that can be tailored to my needs. So, I decidede to build my own portfolio platform by utilizing GitHub's API.
 
-First, run the development server:
+The idea is to fetch repositories from GitHub and display them in a more visually appealing way, maybe even try to run some projects live on the platform itself. This way, I can have a portfolio that is not only a collection of links to GitHub repositories but also a showcase of my work in a more interactive and engaging way.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How it works
+The platform fetches repositories from GitHub using GitHub's API. It then displays the repositories in a visually appealing way, with options to filter and sort the projects based on various criteria such as language, stars, forks, etc.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The website is hosted on Hostinger, where other projects of mine are also hosted. When someone wants to view some of my projects, they can click on "run" button to run the project live on the platform itself. This is achieved by using iframes to embed the project within the portfolio platform.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Features
+- Fetches repositories from GitHub using GitHub's API
+- Displays repositories in a visually appealing way
+- Options to filter and sort projects based on various criteria (language, stars, forks, etc.)
+- Ability to run projects live on the platform using iframes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Technologies Used
+- Next.js
+- TypeScript
+- Tailwind CSS
+- GitHub API
+- Hostinger (for hosting the website)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Project Flow
+1. Figma Design (Low-fidelity wireframes + High-fidelity mockups + Responsive design)
+2. Next.js Setup (with TypeScript and Tailwind CSS)
+3. Setting up Typescript and ESLint configuration
+4. GitHub API Integration
+5. UI Development
+6. Hosting on Hostinger

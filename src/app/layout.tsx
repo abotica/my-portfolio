@@ -21,9 +21,9 @@ export default function RootLayout({
 }>) {
 	return (
 		// Add header and footer and HTML for SEO
-		<html lang='en'>
+		<html lang='en' className='scroll-smooth'>
 			<body
-				className={`${outfit.className} antialiased transition-all duration-300 ease-in-out`}>
+				className={`${outfit.className} antialiased`}>
 				<Header />
 				{children}
 				<Footer />

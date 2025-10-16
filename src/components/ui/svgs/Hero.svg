@@ -1,0 +1,78 @@
+<svg viewBox="0 0 787.6 787.6" xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none" style="width: 787.6px; height: 787.6px;">
+    <rect class="bg" id="bg" x="0" y="0" width="787.6" height="787.6" fill="transparent" />
+    <g transform="translate(307.9866666666667 137.98666666666668)" opacity="0.5">
+        <path
+            d="M260,217Q226,276,167.5,259Q109,242,71,200Q33,158,70.5,115Q108,72,164,61Q220,50,257,104Q294,158,260,217Z"
+            fill="var(--color-primary)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(201.98666666666668 542.9866666666667)" opacity="0.5">
+        <path d="M262,212Q220,266,150,279Q80,292,46,225Q12,158,56,108Q100,58,166,43.5Q232,29,268,93.5Q304,158,262,212Z"
+            fill="var(--color-secondary)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(-43.013333333333335 193.98666666666668)" opacity="0.5">
+        <path
+            d="M238.5,215.5Q224,273,153.5,280Q83,287,68.5,222.5Q54,158,80,113.5Q106,69,160.5,64Q215,59,234,108.5Q253,158,238.5,215.5Z"
+            fill="var(--color-accent)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(65.98666666666666 485.9866666666667)" opacity="0.5">
+        <path
+            d="M267.5,213.5Q222,269,154,275.5Q86,282,70.5,220Q55,158,70,95Q85,32,159,29.5Q233,27,273,92.5Q313,158,267.5,213.5Z"
+            fill="var(--color-warning)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(69 517)" opacity="0.5">
+        <path
+            d="M298,256.5Q267,328,187.5,322.5Q108,317,70.5,251Q33,185,65.5,109.5Q98,34,172.5,55.5Q247,77,288,131Q329,185,298,256.5Z"
+            fill="var(--color-primary)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(-70.01333333333334 -7.013333333333335)" opacity="0.5">
+        <path
+            d="M260.5,217Q226,276,162,268.5Q98,261,56,209.5Q14,158,49.5,94.5Q85,31,156,34Q227,37,261,97.5Q295,158,260.5,217Z"
+            fill="var(--color-secondary)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(253.98666666666668 433.9866666666667)" opacity="0.5">
+        <path
+            d="M256,225.5Q236,293,171.5,269Q107,245,55.5,201.5Q4,158,55.5,114.5Q107,71,171.5,46.5Q236,22,256,90Q276,158,256,225.5Z"
+            fill="var(--color-accent)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(431.6666666666667 -119.33333333333333)" opacity="0.5">
+        <path
+            d="M304,242.5Q251,298,191,290.5Q131,283,97,235Q63,187,85,117.5Q107,48,184,52.5Q261,57,309,122Q357,187,304,242.5Z"
+            fill="var(--color-warning)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(207.98666666666668 438.9866666666667)" opacity="0.5">
+        <path
+            d="M238.5,210Q218,262,164,251Q110,240,59.5,199Q9,158,54.5,108.5Q100,59,157,59.5Q214,60,236.5,109Q259,158,238.5,210Z"
+            fill="var(--color-primary)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(582 500)" opacity="0.5">
+        <path
+            d="M254,229Q239,297,160.5,297Q82,297,65,229Q48,161,78,115Q108,69,165.5,60.5Q223,52,246,106.5Q269,161,254,229Z"
+            fill="var(--color-secondary)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(78.98666666666666 582.9866666666667)" opacity="0.5">
+        <path
+            d="M253,208.5Q216,259,151.5,269.5Q87,280,50,219Q13,158,47.5,92Q82,26,148,42.5Q214,59,252,108.5Q290,158,253,208.5Z"
+            fill="var(--color-accent)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(620 28)" opacity="0.5">
+        <path
+            d="M250.5,211.5Q219,258,165,258.5Q111,259,66,212Q21,165,61,109Q101,53,164.5,54.5Q228,56,255,110.5Q282,165,250.5,211.5Z"
+            fill="var(--color-warning)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(165.98666666666668 13.986666666666665)" opacity="0.5">
+        <path
+            d="M258.5,212Q220,266,151.5,276.5Q83,287,44.5,222.5Q6,158,49,101Q92,44,154.5,49Q217,54,257,106Q297,158,258.5,212Z"
+            fill="var(--color-primary)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(-82.01333333333334 261.9866666666667)" opacity="0.5">
+        <path
+            d="M245.5,219.5Q229,281,169,261.5Q109,242,65.5,200Q22,158,58.5,104Q95,50,152.5,58.5Q210,67,236,112.5Q262,158,245.5,219.5Z"
+            fill="var(--color-secondary)" stroke="none" stroke-width="10" />
+    </g>
+    <g transform="translate(419.6666666666667 206.66666666666669)" opacity="0.5">
+        <path
+            d="M283,257.5Q269,330,185,330Q101,330,84.5,257.5Q68,185,90.5,122.5Q113,60,189,53Q265,46,281,115.5Q297,185,283,257.5Z"
+            fill="var(--color-accent)" stroke="none" stroke-width="10" />
+    </g>
+</svg>

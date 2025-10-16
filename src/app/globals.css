@@ -336,8 +336,8 @@
 		border-end-end-radius: var(--radius-field);
 		border-end-start-radius: var(--radius-field);
 		padding: 0.8rem 1.6rem;
-	}
-	.btn-secondary {
+	} */
+	/* .btn-secondary {
 		transition: all 0.3s ease-in-out;
 		background-color: var(--color-secondary);
 		color: var(--color-secondary-content);
@@ -347,8 +347,7 @@
 		border-end-start-radius: var(--radius-field);
 		padding: 0.8rem 1.6rem;
 	} */
-
-	/* .border-radius-theme {
+	.border-radius-theme {
 		border-start-start-radius: var(--radius-field);
 		border-start-end-radius: var(--radius-field);
 		border-end-end-radius: var(--radius-field);
@@ -361,5 +360,5 @@
 			color-mix(in oklab, var(--color-base-content) 10%, transparent);
 		border-radius: 8px;
 		padding: calc(var(--spacing) * 1);
-	} */
+	}
 }

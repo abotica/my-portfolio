@@ -12,7 +12,7 @@ function ThemeDropdownButton() {
 				<div className="border border-base-content/10 rounded-md">
 					<ThemeDropdown className="transition-transform duration-300 ease-in-out group-hover:rotate-90 size-5"/>
 				</div>
-				{/* <ChevronDown /> */}
+				<ChevronDown className="hidden tablet:block"/>
 			</div>
 			<ThemeDropdownList />
 		</div>

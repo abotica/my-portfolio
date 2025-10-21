@@ -1,10 +1,10 @@
 "use client"
 import {themes} from "@/app/config"
-import { useTheme } from "@/lib/hooks/useTheme";
+import { useTheme } from "@/lib/hooks/useTheme"
 import { capitalizeEachWord } from "@/lib/utils/capitalizeEachWord"
 
 function ThemeDropdownList() {
-    const {theme, setTheme} = useTheme();
+const {theme, setTheme} = useTheme();
 
 	return (
 		<ul

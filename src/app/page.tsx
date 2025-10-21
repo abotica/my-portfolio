@@ -1,10 +1,31 @@
+'use client';
 import { Circle, Hero } from '@/components/ui/svgs';
 import Image from 'next/image';
-import avatar from '@/../public/avatar.png';
+import {light, dark, bumblebee, dracula} from '@/../public/avatars'
 import { aboutMeContent, heroSectionContent, roadmapContent } from './config';
+import { useTheme } from '@/lib/hooks/useTheme';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
-const {greetingParagraph, name, occupation} = heroSectionContent;
+	const { greetingParagraph, name, occupation } = heroSectionContent;
+	const { theme } = useTheme();
+	const [avatar, setAvatar] = useState<StaticImport>(light);
+
+	const avatarMap: Record<string, StaticImport> = {
+		light: light,
+		dark: dark,
+		bumblebee: bumblebee,
+		dracula: dracula
+	}
+	
+	useEffect(() => {
+        // Look up the current theme in the map
+        // If it's not found, default to 'light'
+        const newAvatar = avatarMap[theme] || light;
+        setAvatar(newAvatar);
+    }, [theme]);
+
 
 	return (
 		<main className='min-h-screen'>
@@ -27,11 +48,15 @@ const {greetingParagraph, name, occupation} = heroSectionContent;
 			</section>
 			<section className='min-h-screen px-2'>
 				<h2 className='text-primary'>{aboutMeContent.title}</h2>
-				<p className='text-base-content/70 font-light text-justify text-base'>{aboutMeContent.description}</p>
-
+				<p className='text-base-content/70 font-light text-justify text-base'>
+					{aboutMeContent.description}
+				</p>
 			</section>
 			<section className='min-h-screen px-2'>
-				<h1 className='text-primary-content text-center relative'>{roadmapContent.title}<Circle className="text-primary w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2"/></h1>
+				<h1 className='text-primary-content text-center relative'>
+					{roadmapContent.title}
+					<Circle className='text-primary w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' />
+				</h1>
 			</section>
 		</main>
 	);

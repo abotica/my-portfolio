@@ -1,29 +1,16 @@
-'use client'
+// Corrected file: src/lib/hooks/useTheme.ts
 
-import { useState, useEffect } from 'react'
-import { getPreferredColorScheme } from '@/lib/utils'
-import { Theme } from '@/app/config'
+'use client';
 
-export const useTheme = () => {
-	const [theme, setTheme] = useState<Theme>('light')
+import ThemeContext from '@/contexts/ThemeContext';
+import { useContext } from 'react';
 
-	useEffect(() => {
-		const savedTheme = localStorage.getItem('theme') as Theme | null
+export function useTheme() {
+  const context = useContext(ThemeContext);
 
-		if (savedTheme) {
-			setTheme(savedTheme)
-		} else {
-			const preferredColorScheme = getPreferredColorScheme()
-			if (preferredColorScheme !== 'no-preference') {
-				setTheme(preferredColorScheme)
-			}
-		}
-	}, [])
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
 
-	useEffect(() => {
-		document.documentElement.setAttribute('data-theme', theme)
-		localStorage.setItem('theme', theme)
-	}, [theme])
-
-	return { theme, setTheme }
+  return context;
 }

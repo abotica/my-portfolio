@@ -30,6 +30,7 @@ export default function RootLayout({
 				<Providers>
 					<Header />
 					{children}
+					<SpeedInsights />
 					<Footer />
 				</Providers>
 			</body>

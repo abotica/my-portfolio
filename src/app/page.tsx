@@ -1,7 +1,7 @@
 'use client';
 import { Circle, Hero, RoadmapPath } from '@/components/ui/svgs';
 import Image from 'next/image';
-import {light, dark, bumblebee, dracula} from '@/../public/avatars'
+import {light} from '@/../public/avatars'
 import { aboutMeContent, heroSectionContent, roadmapContent } from './config';
 import { useTheme } from '@/lib/hooks/useTheme';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
@@ -14,9 +14,9 @@ export default function Home() {
 
 	const avatarMap: Record<string, StaticImport> = {
 		light: light,
-		dark: dark,
-		bumblebee: bumblebee,
-		dracula: dracula
+		// dark: dark,
+		// bumblebee: bumblebee,
+		// dracula: dracula
 	}
 	
 	useEffect(() => {

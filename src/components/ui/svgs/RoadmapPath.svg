@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<svg id="progress-svg" class="w-[300px] h-[500px] overflow-visible" viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg">
-            <!-- The main path that will be animated -->
-            <path id="the-path" class="fill-none stroke-indigo-600 stroke-[8] stroke-linecap-round stroke-linejoin-round" d="M 150 50 C 50 150, 50 150, 100 250 C 150 350, 250 350, 250 450"/>
+<svg viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M 50 0 V 200" 
+    stroke="var(--color-primary)" 
+    stroke-width="5" 
+    fill="none" 
+    pathLength="1"
+  />
 
-            <!-- The circles that appear at specific points -->
-            <circle id="circle-1" class="progress-circle fill-indigo-600 stroke-white stroke-[4] opacity-0 drop-shadow-md" cx="100" cy="250" r="12" />
-            <circle id="circle-2" class="progress-circle fill-indigo-600 stroke-white stroke-[4] opacity-0 drop-shadow-md" cx="250" cy="450" r="12" />
+  <circle 
+    cx="50" 
+    cy="80" 
+    r="10" 
+    fill="var(--color-primary)"
+  />
+
+  <circle 
+    cx="50" 
+    cy="160" 
+    r="10" 
+    fill="var(--color-primary)"
+  />
 </svg>

@@ -56,7 +56,7 @@ export default function Home() {
 			<section className='min-h-screen px-2'>
 				<h1 className='text-primary-content text-center relative'>
 					{roadmapContent.title}
-					<Circle className='roadmap-root text-primary w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' />
+					<Circle className='roadmap-root w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' />
 				</h1>
 				<RoadmapPath className='roadmap'/>
 			</section>

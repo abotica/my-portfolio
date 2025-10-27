@@ -6,3 +6,4 @@ export {default as ThemeDropdown} from './ThemeDropdown.svg';
 export {default as Hero} from './Hero.svg';
 export {default as Circle} from './Circle.svg';
 export {default as RoadmapPath} from './RoadmapPath.svg';
+export {default as Download} from './Download.svg';

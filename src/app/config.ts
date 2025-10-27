@@ -30,6 +30,12 @@ export const roadmapContent = {
         },
     ],
 } as const;
+export const downloadablesLinkContent = {
+    cv: {
+        label: 'GET MY CV',
+        fileName: 'CV-Andrija Botica.pdf',
+    }
+} as const;
 
 export type Theme = (typeof themes)[number];
 export type ColorScheme = 'dark' | 'light' | 'no-preference';

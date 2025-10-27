@@ -33,7 +33,7 @@ The website is hosted on Hostinger, where other projects of mine are also hosted
 6. Hosting on Hostinger
 
 # To-Do
-- [ ] Dynamic theme switching using TailwindCSS
+- [x] Dynamic theme switching using TailwindCSS
 - [ ] Dynamic language switching (maybe use the i18n package or text files for translations)
-- [ ] Add an SVG package webpack loader to optimize SVGs
+- [x] Add an SVG package webpack loader to optimize SVGs
 - [ ] Add more animations using Framer Motion

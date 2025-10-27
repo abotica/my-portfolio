@@ -6,5 +6,5 @@
     role="img"
     aria-hidden="true"
     preserveAspectRatio="xMidYMid meet">
-  <circle cx="12" cy="12" r="10" fill="currentColor"/>
+  <circle cx="12" cy="12" r="10" fill="var(--color-secondary)"/>
 </svg>

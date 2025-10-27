@@ -3,7 +3,7 @@
 <svg viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
   <path
     d="M 50 0 V 200" 
-    stroke="var(--color-primary)" 
+    stroke="var(--color-secondary)" 
     stroke-width="5" 
     fill="none" 
     pathLength="1"
@@ -13,13 +13,13 @@
     cx="50" 
     cy="80" 
     r="10" 
-    fill="var(--color-primary)"
+    fill="var(--color-secondary)"
   />
 
   <circle 
     cx="50" 
     cy="160" 
     r="10" 
-    fill="var(--color-primary)"
+    fill="var(--color-secondary)"
   />
 </svg>

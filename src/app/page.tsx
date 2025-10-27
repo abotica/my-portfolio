@@ -7,12 +7,14 @@ import { useTheme } from '@/lib/hooks/useTheme';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { useEffect, useState } from 'react';
 import DownloadLink from '@/components/ui/DownloadLink';
+import KeywordsGrid from '@/components/ui/keywords-grid/KeywordsGrid';
 
 export default function Home() {
 	const { greetingParagraph, name, occupation } = heroSectionContent;
 	const {cv} = downloadablesLinkContent;
 	const { theme } = useTheme();
 	const [avatar, setAvatar] = useState<StaticImport>(light);
+
 
 	const avatarMap: Record<string, StaticImport> = {
 		light: light,
@@ -48,20 +50,18 @@ export default function Home() {
 				/>
 			</section>
 			<section className='min-h-screen px-2'>
-				<h2 className='text-primary'>{aboutMeContent.title}</h2>
-				<p className='text-base-content/70 font-light text-justify text-base'>
-					{aboutMeContent.description}
-				</p>
+				<h1 className='text-primary'>{aboutMeContent.title}</h1>
+				<KeywordsGrid keywords={aboutMeContent.keywords}/>
 			</section>
 			<section className='min-h-screen px-2'>
 				<h1 className='text-primary-content text-center relative'>
 					{roadmapContent.title}
-					<Circle className='roadmap-root text-primary w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' />
+					<Circle className='roadmap-root w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' />
 				</h1>
 				<RoadmapPath className='roadmap'/>
 			</section>
 			<section className='min-h-screen px-2'>
-				<h1 className='text-secondary'>Downloadables</h1>
+				<h1 className='text-primary'>Downloadables</h1>
 				<DownloadLink label={cv.label} fileName={cv.fileName}/>
 			</section>
 		</main>

@@ -2,13 +2,15 @@
 import { Circle, Hero, RoadmapPath } from '@/components/ui/svgs';
 import Image from 'next/image';
 import {light} from '@/../public/avatars'
-import { aboutMeContent, heroSectionContent, roadmapContent } from './config';
+import { aboutMeContent, heroSectionContent, roadmapContent, downloadablesLinkContent } from './config';
 import { useTheme } from '@/lib/hooks/useTheme';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { useEffect, useState } from 'react';
+import DownloadLink from '@/components/ui/DownloadLink';
 
 export default function Home() {
 	const { greetingParagraph, name, occupation } = heroSectionContent;
+	const {cv} = downloadablesLinkContent;
 	const { theme } = useTheme();
 	const [avatar, setAvatar] = useState<StaticImport>(light);
 
@@ -57,6 +59,10 @@ export default function Home() {
 					<Circle className='roadmap-root text-primary w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' />
 				</h1>
 				<RoadmapPath className='roadmap'/>
+			</section>
+			<section className='min-h-screen px-2'>
+				<h1 className='text-secondary'>Downloadables</h1>
+				<DownloadLink label={cv.label} fileName={cv.fileName}/>
 			</section>
 		</main>
 	);

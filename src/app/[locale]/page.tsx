@@ -2,16 +2,20 @@
 import { Circle, Hero, RoadmapPath } from '@/components/ui/svgs';
 import Image from 'next/image';
 import {light} from '@/../public/avatars'
-import { aboutMeContent, heroSectionContent, roadmapContent, downloadablesLinkContent } from './config';
+import { aboutMeContent } from './config';
 import { useTheme } from '@/lib/hooks/useTheme';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import { useEffect, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import DownloadLink from '@/components/ui/DownloadLink';
 import KeywordsGrid from '@/components/ui/keywords-grid/KeywordsGrid';
 
+import {useTranslations} from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
+
+
 export default function Home() {
-	const { greetingParagraph, name, occupation } = heroSectionContent;
-	const {cv} = downloadablesLinkContent;
+	const t = useTranslations("HomePage");
+
 	const { theme } = useTheme();
 	const [avatar, setAvatar] = useState<StaticImport>(light);
 
@@ -35,9 +39,9 @@ export default function Home() {
 			{/* Calculated height dynamically with calc */}
 			<section className='flex flex-col items-center overflow-clip min-h-[calc(100vh_-_64px)] relative'>
 				<div className='flex flex-col items-center'>
-					<p className='text-base-content/70'>{greetingParagraph}</p>
-					<h1 className='text-base-content'>{name}</h1>
-					<h2 className='text-base-content'>{occupation}</h2>
+					<p className='text-base-content/70'>{t('HeroSection.greeting')}</p>
+					<h1 className='text-base-content'>{t('HeroSection.name')}</h1>
+					<h2 className='text-base-content'>{t('HeroSection.job')}</h2>
 				</div>
 				<Hero className='h-full w-auto absolute -z-30' />
 				<Image
@@ -50,19 +54,19 @@ export default function Home() {
 				/>
 			</section>
 			<section className='min-h-screen px-2'>
-				<h1 className='text-base-content'>{aboutMeContent.title}</h1>
+				<h1 className='text-base-content'>{t('AboutMeSection.title')}</h1>
 				<KeywordsGrid keywords={aboutMeContent.keywords}/>
 			</section>
 			<section className='min-h-screen px-2'>
 				<h1 className='text-base-content text-center relative'>
-					{roadmapContent.title}
+					{t('RoadmapSection.title')}
 					{/* <Circle className='roadmap-root text-secondary w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' /> */}
 				</h1>
 				<RoadmapPath className='roadmap'/>
 			</section>
 			<section className='min-h-screen px-2'>
-				<h1 className='text-base-content'>Downloadables</h1>
-				<DownloadLink label={cv.label} fileName={cv.fileName}/>
+				<h1 className='text-base-content'>{t('DownloadablesSection.title')}</h1>
+				<DownloadLink label={t('DownloadablesSection.links.cv.label')} fileName={t('DownloadablesSection.links.cv.fileName')}/>
 			</section>
 		</main>
 	);

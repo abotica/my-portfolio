@@ -1,4 +1,4 @@
-import { Keyword } from "@/app/config";
+import { Keyword } from "@/app/[locale]/config";
 import {React} from "@/components/ui/svgs"
 
 function KeywordsItem({keyword, itemIndex}: {keyword: Keyword, itemIndex: number}) {

@@ -5,7 +5,7 @@
 import ThemeContext from '@/contexts/ThemeContext';
 import { useState, useEffect, ReactNode } from 'react';
 import { getPreferredColorScheme } from '@/lib/utils';
-import { Theme } from '@/app/config';
+import { Theme } from '@/app/[locale]/config';
 
 function ThemeProvider({ children }: { children: ReactNode }) {
     const [theme, setTheme] = useState<Theme>('light');

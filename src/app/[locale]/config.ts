@@ -8,13 +8,7 @@ export const themes = [
 	'forest',
 	'dracula',
 ] as const;
-export const heroSectionContent = {
-	greetingParagraph: "Howdy 👋, I'm",
-	name: 'Andrija Botica',
-	occupation: 'Software Engineer',
-} as const;
 export const aboutMeContent = {
-	title: 'My Skills',
 	keywords: [
 		{ value: 'React', backgroundColor: 'secondary', contentColor: 'secondary-content' },
 		{ value: 'TypeScript', backgroundColor: 'secondary', contentColor: 'secondary-content' },
@@ -27,33 +21,6 @@ export const aboutMeContent = {
 		{ value: 'SEO', backgroundColor: 'secondary', contentColor: 'secondary-content' },
 		{ value: 'Figma', backgroundColor: 'secondary', contentColor: 'secondary-content' },
 	],
-} as const;
-export const roadmapContent = {
-	title: 'Roadmap',
-	items: [
-		{
-			year: 2021,
-			goals: [
-				'Launch personal portfolio website',
-				'Contribute to open source projects',
-				'Learn TypeScript and apply it in projects',
-			],
-		},
-		{
-			year: 2024,
-			goals: [
-				'Build a full-stack application with Next.js',
-				'Explore new technologies like GraphQL and Docker',
-				'Improve design skills and learn Figma',
-			],
-		},
-	],
-} as const;
-export const downloadablesLinkContent = {
-	cv: {
-		label: 'GET MY CV',
-		fileName: 'CV-Andrija Botica.pdf',
-	},
 } as const;
 
 export type Theme = (typeof themes)[number];

@@ -1,4 +1,4 @@
-import { Keywords } from "@/app/config";
+import { Keywords } from "@/app/[locale]/config";
 import KeywordsItem from "./KeywordsItem";
 
 function KeywordsGrid({keywords}: {keywords: Keywords}) {

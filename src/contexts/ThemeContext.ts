@@ -1,4 +1,4 @@
-import { Theme } from "@/app/config";
+import { Theme } from "@/app/[locale]/config";
 import { createContext, Dispatch, SetStateAction } from "react";
 
 type TContext = {

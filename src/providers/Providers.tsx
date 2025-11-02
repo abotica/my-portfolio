@@ -5,7 +5,7 @@ function Providers({ children }: { children: React.ReactNode }) {
 	return (
 		<>
 			<NextIntlClientProvider>
-				<ThemeProvider>{children}</ThemeProvider>;
+				<ThemeProvider>{children}</ThemeProvider>
 			</NextIntlClientProvider>
 		</>
 	);

@@ -36,8 +36,8 @@ export default function Home() {
 			<section className='flex flex-col items-center overflow-clip min-h-[calc(100vh_-_64px)] relative'>
 				<div className='flex flex-col items-center'>
 					<p className='text-base-content/70'>{greetingParagraph}</p>
-					<h1 className='text-primary'>{name}</h1>
-					<h2 className='text-primary'>{occupation}</h2>
+					<h1 className='text-base-content'>{name}</h1>
+					<h2 className='text-base-content'>{occupation}</h2>
 				</div>
 				<Hero className='h-full w-auto absolute -z-30' />
 				<Image
@@ -50,18 +50,18 @@ export default function Home() {
 				/>
 			</section>
 			<section className='min-h-screen px-2'>
-				<h1 className='text-primary'>{aboutMeContent.title}</h1>
+				<h1 className='text-base-content'>{aboutMeContent.title}</h1>
 				<KeywordsGrid keywords={aboutMeContent.keywords}/>
 			</section>
 			<section className='min-h-screen px-2'>
-				<h1 className='text-primary-content text-center relative'>
+				<h1 className='text-base-content text-center relative'>
 					{roadmapContent.title}
-					<Circle className='roadmap-root w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' />
+					{/* <Circle className='roadmap-root text-secondary w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' /> */}
 				</h1>
 				<RoadmapPath className='roadmap'/>
 			</section>
 			<section className='min-h-screen px-2'>
-				<h1 className='text-primary'>Downloadables</h1>
+				<h1 className='text-base-content'>Downloadables</h1>
 				<DownloadLink label={cv.label} fileName={cv.fileName}/>
 			</section>
 		</main>

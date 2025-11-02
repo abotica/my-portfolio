@@ -1,0 +1,43 @@
+{
+    "Metadata": {
+        "title": "My Portfolio",
+        "description": "Portfolio page of Andrija Botica"
+    },
+    "HomePage": {
+        "HeroSection": {
+            "greeting": "Howdy 👋, I'm",
+            "name": "Andrija Botica",
+            "job": "Software engineer"
+        },
+        "AboutMeSection": {
+            "title": "My Skills"
+        },
+        "RoadmapSection": {
+            "title": "Roadmap",
+            "items": [
+                {
+                    "year": 2021,
+                    "goals": [
+                        "Launch personal portfolio website",
+                        "Contribute to open source projects",
+                        "Learn TypeScript and apply it in projects"
+                    ]
+                },
+                {
+                    "year": 2024,
+                    "goals": [
+                        "Build a full-stack application with Next.js",
+                        "Explore new technologies like GraphQL and Docker",
+                        "Improve design skills and learn Figma"
+                    ]
+                }
+            ]
+        },
+        "DownloadablesSection": {
+            "title": "Downloadables",
+            "links": {
+                "cv": { "label": "Download my CV", "fileName": "CV-Andrija Botica.pdf"}
+            }
+        }
+    }
+}

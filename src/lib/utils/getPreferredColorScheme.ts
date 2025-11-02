@@ -1,4 +1,4 @@
-import { ColorScheme } from "@/app/config";
+import { ColorScheme } from "@/app/[locale]/config";
 
 export const getPreferredColorScheme = ():ColorScheme => {
 

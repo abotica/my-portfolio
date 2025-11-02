@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import ThemeDropdownButton from '@/components/ui/theme-dropdown-button/ThemeDropdownButton';
 import { useScrollShadow } from '@/lib/hooks/useScrollShadow';
+import LanguageDropdownButton from '../ui/language-dropdown-button/LanguageDropdownButton';
 
 function Header() {
     const isScrolled = useScrollShadow();
@@ -11,8 +12,8 @@ function Header() {
             >
             <Link href="" aria-label='Portfolio icon'><h1 className='font-extrabold text-3xl px-2'>Portfolio</h1></Link>
 			<nav className='navbar justify-end'>
-				
 				<ThemeDropdownButton />
+				<LanguageDropdownButton />
 			</nav>
 		</header>
 	);

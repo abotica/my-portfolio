@@ -1,5 +1,5 @@
 "use client"
-import {themes} from "@/app/config"
+import {themes} from "@/app/[locale]/config"
 import { useTheme } from "@/lib/hooks/useTheme"
 import { capitalizeEachWord } from "@/lib/utils/capitalizeEachWord"
 

@@ -1,0 +1,43 @@
+{
+    "Metadata": {
+        "title": "Moj Portfolio",
+        "description": "Portfolio stranica Andrije Botice"
+    },
+    "HomePage": {
+        "HeroSection": {
+            "greeting": "Pozdrav 👋, ja sam",
+            "name": "Andrija Botica",
+            "job": "Softverski inženjer"
+        },
+        "AboutMeSection": {
+            "title": "Moje Vještine"
+        },
+        "RoadmapSection": {
+            "title": "Plan razvoja",
+            "items": [
+                {
+                    "year": 2021,
+                    "goals": [
+                        "Pokretanje osobne portfolio web stranice",
+                        "Doprinos open source projektima",
+                        "Učenje TypeScripta i primjena u projektima"
+                    ]
+                },
+                {
+                    "year": 2024,
+                    "goals": [
+                        "Izgradnja full-stack aplikacije s Next.js",
+                        "Istraživanje novih tehnologija poput GraphQL-a i Dockera",
+                        "Unapređenje dizajnerskih vještina i učenje Figme"
+                    ]
+                }
+            ]
+        },
+        "DownloadablesSection": {
+            "title": "Preuzimanja",
+            "links": {
+                "cv": { "label": "Preuzmi moj CV", "fileName": "CV-Andrija Botica.pdf"}
+            }
+        }
+    }
+}

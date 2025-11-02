@@ -37,3 +37,6 @@ The website is hosted on Hostinger, where other projects of mine are also hosted
 - [ ] Dynamic language switching (maybe use the i18n package or text files for translations)
 - [x] Add an SVG package webpack loader to optimize SVGs
 - [ ] Add more animations using Framer Motion
+- [ ] Fix non-prefixed locale redirect bug
+- [ ] Fix active language dropdown item bug
+- [ ] Add language names in locale language (e.g., English for en, Deutsch for de)

@@ -9,28 +9,24 @@ export const themes = [
 	'dracula',
 ] as const;
 export const heroSectionContent = {
-	greetingParagraph: "Howdy, I'm",
+	greetingParagraph: "Howdy 👋, I'm",
 	name: 'Andrija Botica',
 	occupation: 'Software Engineer',
 } as const;
 export const aboutMeContent = {
-	title: 'About Me',
+	title: 'My Skills',
 	keywords: [
-  { value: 'React', backgroundColor: '#61DAFB', contentColor: '#000000' },
-  { value: 'TypeScript', backgroundColor: '#3178C6', contentColor: '#FFFFFF' },
-  { value: 'Node.js', backgroundColor: '#339933', contentColor: '#FFFFFF' },
-  { value: 'Frontend Development', backgroundColor: '#4A90E2', contentColor: '#FFFFFF' },
-  { value: 'Web Developer', backgroundColor: '#2C3E50', contentColor: '#FFFFFF' },
-  { value: 'JavaScript', backgroundColor: '#F7DF1E', contentColor: '#000000' },
-  { value: 'Tailwind CSS', backgroundColor: '#06B6D4', contentColor: '#FFFFFF' },
-  { value: 'SCSS', backgroundColor: '#CD6799', contentColor: '#FFFFFF' },
-  { value: 'Docker', backgroundColor: '#2496ED', contentColor: '#FFFFFF' },
-  { value: 'Programming Mentor', backgroundColor: '#F39C12', contentColor: '#FFFFFF' },
-  { value: 'HTML', backgroundColor: '#E34F26', contentColor: '#FFFFFF' },
-  { value: 'CSS', backgroundColor: '#1572B6', contentColor: '#FFFFFF' },
-  { value: 'Dotien', backgroundColor: '#34495E', contentColor: '#FFFFFF' },
-  { value: 'Continuous Learning', backgroundColor: '#8E44AD', contentColor: '#FFFFFF' }
-]
+		{ value: 'React', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+		{ value: 'TypeScript', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+		{ value: 'Node.js', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+		{ value: 'Vercel', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+		{ value: 'Tailwind CSS', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+		{ value: 'SCSS', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+		{ value: 'Docker', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+		{ value: 'Mentor', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+		{ value: 'SEO', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+		{ value: 'Figma', backgroundColor: 'secondary', contentColor: 'secondary-content' },
+	],
 } as const;
 export const roadmapContent = {
 	title: 'Roadmap',

@@ -44,14 +44,14 @@ export default function Home() {
 					<h2 className='text-base-content'>{t('HeroSection.job')}</h2>
 				</div>
 				<Hero className='h-full w-auto absolute -z-30' />
-				<Image
+				{/* <Image
 					src={avatar}
 					alt='avatar'
 					className='w-full h-auto absolute bottom-0'
 					sizes=''
 					// Can I use already defined tailwind breakpoints??
 					priority
-				/>
+				/> */}
 			</section>
 			<section className='min-h-screen px-2'>
 				<h1 className='text-base-content'>{t('AboutMeSection.title')}</h1>

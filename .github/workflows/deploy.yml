@@ -12,9 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
  
-      - name: Log in to Container registry
-        uses: docker/login-action@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
         with:
+          registry: ghcr.io
           username: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
           password: ${{ secrets.CONTAINER_REGISTRY_TOKEN }}
  
@@ -26,5 +27,5 @@ jobs:
           push: true
           # Make sure to replace with your own namespace and repository
           tags: |
-            ghcr.io/${{ github.repository_owner }}/my-portfolio:${{ github.sha }} 
+            ghcr.io/${{ secrets.CONTAINER_REGISTRY_USERNAME }}/my-portfolio:${{ github.sha }} 
           platforms: linux/amd64     

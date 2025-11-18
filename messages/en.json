@@ -7,7 +7,10 @@
         "HeroSection": {
             "greeting": "Howdy 👋, I'm",
             "name": "Andrija Botica",
-            "job": "Software engineer"
+            "job": "Software Engineer",
+            "description": "I am a passionate software engineer with experience in web application development and always eager to learn new technologies.",
+            "primaryButton": "View My Projects",
+            "secondaryButton": "Contact Me"
         },
         "AboutMeSection": {
             "title": "My Skills"

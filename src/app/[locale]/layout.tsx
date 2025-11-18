@@ -45,7 +45,8 @@ export default async function RootLayout({ children, params }: Props) {
 		// Add header and footer and HTML for SEO
 		<html
 			lang={locale}
-			data-scroll-behaviour="smooth">
+			className='scroll-smooth'
+			>
 			<body className={`${outfit.className} antialiased`}>
 				<Providers>
 					<Header />

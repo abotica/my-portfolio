@@ -7,7 +7,10 @@
         "HeroSection": {
             "greeting": "Pozdrav 👋, ja sam",
             "name": "Andrija Botica",
-            "job": "Softverski inženjer"
+            "job": "Softverski Inženjer",
+            "description": "Strastveni sam softverski inženjer s iskustvom u razvoju web aplikacija i uvijek željan naučiti nove tehnologije.",
+            "primaryButton": "Pogledaj Moje Projekte",
+            "secondaryButton": "Kontaktiraj Me"
         },
         "AboutMeSection": {
             "title": "Moje Vještine"

@@ -9,38 +9,39 @@
             "name": "Andrija Botica",
             "job": "Softverski Inženjer",
             "description": "Strastveni sam softverski inženjer s iskustvom u razvoju web aplikacija i uvijek željan naučiti nove tehnologije.",
-            "primaryButton": "Pogledaj Moje Projekte",
-            "secondaryButton": "Kontaktiraj Me"
+            "primaryButton": "Pogledaj Moj Rad",
+            "secondaryButton": "Stupite u Kontakt"
         },
         "AboutMeSection": {
-            "title": "Moje Vještine"
+            "title": "O Meni",
+            "description": "Strastveni sam softverski inženjer s iskustvom u modernim web tehnologijama. Volim stvarati efikasna i skalabilna rješenja te sam uvijek spreman učiti i prilagoditi se novim izazovima u stalno razvijajućem tehnološkom krajoliku."
         },
-        "RoadmapSection": {
-            "title": "Plan razvoja",
+        "SkillsSection": {
+            "title": "Vještine i Tehnologije",
+            "description": "Evo tehnologija i alata s kojima redovito radim."
+        },
+        "FeaturedProjectsSection": {
+            "title": "Istaknuti Projekti",
+            "description": "Pogledajte neke od projekata na kojima sam radio i koji prikazuju moje vještine i iskustvo u web developmentu."
+        },
+        "DownloadsSection": {
+            "title": "Preuzimanja",
             "items": [
                 {
-                    "year": 2021,
-                    "goals": [
-                        "Pokretanje osobne portfolio web stranice",
-                        "Doprinos open source projektima",
-                        "Učenje TypeScripta i primjena u projektima"
-                    ]
+                    "title": "CV / Životopis",
+                    "description": "Preuzmite moj potpuni CV s iskustvom, obrazovanjem i certifikatima",
+                    "icon": "FileText",
+                    "url": "/downloadables/CV-Andrija Botica.pdf",
+                    "fileType": "PDF"
                 },
                 {
-                    "year": 2024,
-                    "goals": [
-                        "Izgradnja full-stack aplikacije s Next.js",
-                        "Istraživanje novih tehnologija poput GraphQL-a i Dockera",
-                        "Unapređenje dizajnerskih vještina i učenje Figme"
-                    ]
+                    "title": "Propratno Pismo",
+                    "description": "Moj template propratnog pisma i predstavljanje",
+                    "icon": "Mail",
+                    "url": "#",
+                    "fileType": "PDF"
                 }
             ]
-        },
-        "DownloadablesSection": {
-            "title": "Preuzimanja",
-            "links": {
-                "cv": { "label": "Preuzmi moj CV", "fileName": "CV-Andrija Botica.pdf"}
-            }
         }
     }
 }

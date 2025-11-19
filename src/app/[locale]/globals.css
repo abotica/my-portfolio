@@ -57,6 +57,20 @@
 		}
 	}
 
+	/* Embla Carousel Styles */
+	.embla {
+		overflow: hidden;
+	}
+
+	.embla__container {
+		display: flex;
+	}
+
+	.embla__slide {
+		flex: 0 0 auto;
+		min-width: 0;
+	}
+
 	/* Global styles */
 	h1 {
 		font-size: var(--text-4xl);

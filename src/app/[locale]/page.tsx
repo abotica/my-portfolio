@@ -1,17 +1,16 @@
 'use client';
-import { Circle, Hero, RoadmapPath } from '@/components/ui/svgs';
-import Image from 'next/image';
 import {light} from '@/../public/avatars'
-import { aboutMeContent } from './config';
 import { useTheme } from '@/lib/hooks/useTheme';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import { use, useEffect, useState } from 'react';
-import DownloadLink from '@/components/ui/DownloadLink';
-import KeywordsGrid from '@/components/ui/keywords-grid/KeywordsGrid';
+import { useEffect, useState } from 'react';
+import DownloadCards from '@/components/ui/DownloadCards';
+import SkillsCarousel from '@/components/ui/SkillsCarousel';
 
 import {useTranslations} from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import Button from '@/components/ui/Button';
+import Section from '@/components/ui/Section';
+import Link from '@/components/ui/Link';
 
 
 export default function Home() {
@@ -37,43 +36,31 @@ export default function Home() {
 
 	return (
 		<main className='min-h-screen'>
-			{/* Calculated height dynamically with calc */}
-			<section className='flex flex-col items-center overflow-clip min-h-[calc(100vh_-_64px)] px-4 pt-16'>
+			{/* Hero Section */}
+			<Section variant="hero" id="home">
 				<div className='flex flex-col items-center'>
 					<p className='text-lg sm:text-xl text-secondary font-medium mb-2'>{t('HeroSection.greeting')}</p>
 					<h1 className='text-5xl tablet:text-6xl desktop:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight'>{t('HeroSection.name')}</h1>
 					<h2 className='text-xl sm:text-2xl text-secondary font-semibold mb-6'>{t('HeroSection.job')}</h2>
 					<p className='text-lg sm:text-xl text-base-content/70 text-center max-w-2xl mx-auto mb-8 leading-relaxed'>{t('HeroSection.description')}</p>
 				</div>
-				<div className='flex flex-col gap-4 w-full'>
-					<Button variant='primary' className='w-full'>{t('HeroSection.primaryButton')}</Button>
-					<Button variant='secondary' className='w-full'>{t('HeroSection.secondaryButton')}</Button>
+				<div className='flex flex-col gap-4 w-full tablet:flex-row tablet:justify-center'>
+					<Link variant='primary' href='#projects' className='w-full tablet:w-max'>{t('HeroSection.primaryButton')}</Link>
+					<Link variant='secondary' href='#about-me' className='w-full tablet:w-max'>{t('HeroSection.secondaryButton')}</Link>
 				</div>
-				{/* <Hero className='h-full w-auto absolute -z-30' /> */}
-				{/* <Image
-					src={avatar}
-					alt='avatar'
-					className='w-full h-auto absolute bottom-0'
-					sizes=''
-					// Can I use already defined tailwind breakpoints??
-					priority
-				/> */}
-			</section>
-			<section className='min-h-screen px-2'>
-				<h1 id='about-me' className='text-base-content'>{t('AboutMeSection.title')}</h1>
-				<KeywordsGrid keywords={aboutMeContent.keywords}/>
-			</section>
-			<section className='min-h-screen px-2'>
-				<h1 className='text-base-content text-center relative'>
-					{t('RoadmapSection.title')}
-					{/* <Circle className='roadmap-root text-secondary w-full absolute -z-30 top-1/2 left-1/2 -translate-1/2' /> */}
-				</h1>
-				<RoadmapPath className='roadmap'/>
-			</section>
-			<section className='min-h-screen px-2'>
-				<h1 className='text-base-content'>{t('DownloadablesSection.title')}</h1>
-				<DownloadLink label={t('DownloadablesSection.links.cv.label')} fileName={t('DownloadablesSection.links.cv.fileName')}/>
-			</section>
+			</Section>
+			<Section variant="content" id="about-me" title={t('AboutMeSection.title')}>
+				<p className='text-lg text-base-content/70 leading-relaxed'>{t('AboutMeSection.description')}</p>
+			</Section>
+			<Section variant="content" id="skills" title={t('SkillsSection.title')}>
+				<SkillsCarousel />
+			</Section>
+			<Section variant="content" id="projects" title={t('FeaturedProjectsSection.title')}>
+				<p className='text-lg text-base-content/70 leading-relaxed'>{t('FeaturedProjectsSection.description')}</p>
+			</Section>
+			<Section variant="content" id="downloads" title={t('DownloadsSection.title')}>
+				<DownloadCards items={t.raw('DownloadsSection.items')} />
+			</Section>
 		</main>
 	);
 }

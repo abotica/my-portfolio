@@ -7,7 +7,7 @@ type ButtonProps = {
 
 function Button({ children, variant = "primary", onClick, className }: ButtonProps) {
   const baseStyle =
-    "px-8 py-3 rounded-lg font-semibold transition focus:outline-none focus:ring-2 transition-colors font-medium";
+    "px-8 py-3 cursor-pointer rounded-lg font-semibold transition focus:outline-none focus:ring-2 transition-colors font-medium";
 
   const variantStyle =
     variant === "primary"

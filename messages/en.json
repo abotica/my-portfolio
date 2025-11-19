@@ -9,38 +9,39 @@
             "name": "Andrija Botica",
             "job": "Software Engineer",
             "description": "I am a passionate software engineer with experience in web application development and always eager to learn new technologies.",
-            "primaryButton": "View My Projects",
-            "secondaryButton": "Contact Me"
+            "primaryButton": "View My Work",
+            "secondaryButton": "Get in Touch"
         },
         "AboutMeSection": {
-            "title": "My Skills"
+            "title": "About Me",
+            "description": "I am a passionate software engineer with experience in modern web technologies. I love creating efficient, scalable solutions and am always eager to learn and adapt to new challenges in the ever-evolving tech landscape."
         },
-        "RoadmapSection": {
-            "title": "Roadmap",
+        "SkillsSection": {
+            "title": "Skills & Technologies",
+            "description": "Here are the technologies and tools I work with on a regular basis."
+        },
+        "FeaturedProjectsSection": {
+            "title": "Featured Projects",
+            "description": "Take a look at some of the projects I've worked on that showcase my skills and experience in web development."
+        },
+        "DownloadsSection": {
+            "title": "Downloads",
             "items": [
                 {
-                    "year": 2021,
-                    "goals": [
-                        "Launch personal portfolio website",
-                        "Contribute to open source projects",
-                        "Learn TypeScript and apply it in projects"
-                    ]
+                    "title": "CV / Resume",
+                    "description": "Download my full CV with experience, education, and certifications",
+                    "icon": "FileText",
+                    "url": "/downloadables/CV-Andrija Botica.pdf",
+                    "fileType": "PDF"
                 },
                 {
-                    "year": 2024,
-                    "goals": [
-                        "Build a full-stack application with Next.js",
-                        "Explore new technologies like GraphQL and Docker",
-                        "Improve design skills and learn Figma"
-                    ]
+                    "title": "Cover Letter",
+                    "description": "My cover letter template and introduction",
+                    "icon": "Mail",
+                    "url": "#",
+                    "fileType": "PDF"
                 }
             ]
-        },
-        "DownloadablesSection": {
-            "title": "Downloadables",
-            "links": {
-                "cv": { "label": "Download my CV", "fileName": "CV-Andrija Botica.pdf"}
-            }
         }
     }
 }

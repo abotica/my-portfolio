@@ -5,8 +5,8 @@ import { socialsStyle } from '@/app/[locale]/config';
 
 function Footer() {
 	return (
-		<footer className='border-t border-base-content/10 py-9 px-6'>
-            <Link href="" aria-label='Portfolio icon'><h1 className='font-extrabold text-3xl'>Portfolio</h1></Link>
+		<footer className='py-9 px-6'>
+            <Link href="" aria-label='Portfolio icon'><h1 className='font-extrabold text-primary text-xl'>Dev</h1></Link>
 			<ul className='flex justify-end gap-2'>
 				<li>
 					<Link href={'https://github.com/abotica'}>

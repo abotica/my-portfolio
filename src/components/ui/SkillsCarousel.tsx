@@ -1,130 +1,109 @@
 import useEmblaCarousel from 'embla-carousel-react'
-import { useCallback, useEffect, useRef } from 'react'
-import {
-  React,
-  TypeScript,
-  TailwindCSS,
-  NodeJS,
-  Docker,
-  Figma,
-  SEO,
-  SCSS
-} from './svgs';
-
-// Available skill SVGs from the svgs folder
-const skillIcons = [
-  { name: 'React', Icon: React },
-  { name: 'TypeScript', Icon: TypeScript },
-  { name: 'Tailwind CSS', Icon: TailwindCSS },
-  { name: 'Node.js', Icon: NodeJS },
-  { name: 'Docker', Icon: Docker },
-  { name: 'Figma', Icon: Figma },
-  { name: 'SEO', Icon: SEO },
-  { name: 'SCSS', Icon: SCSS },
-];
+import { useEffect, useRef } from 'react'
+import { frontendSkills, backendDevOpsSkills } from '../../app/[locale]/config';
 
 function SkillsCarousel() {
-  // Top row - left to right
-  const [topRowRef, topRowApi] = useEmblaCarousel({
-    loop: true,
-    align: 'start',
-    containScroll: false,
-    dragFree: true,
-    duration: 50
-  });
+  const topRowRef = useRef<HTMLDivElement>(null);
+  const bottomRowRef = useRef<HTMLDivElement>(null);
 
-  // Bottom row - right to left
-  const [bottomRowRef, bottomRowApi] = useEmblaCarousel({
-    loop: true,
-    align: 'start',
-    containScroll: false,
-    dragFree: true,
-    duration: 50
-  });
-
-  const topHoveredRef = useRef(false);
-  const bottomHoveredRef = useRef(false);
-
+  // Continuous scrolling animation using transforms
   useEffect(() => {
-    if (!topRowApi) return;
-    
-    let intervalId: NodeJS.Timeout;
-    
-    const startScroll = () => {
-      intervalId = setInterval(() => {
-        if (!topHoveredRef.current && topRowApi) {
-          topRowApi.scrollNext();
-        }
-      }, 2000); // Much slower - 2 seconds between slides
-    };
-    
-    startScroll();
-    
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [topRowApi]);
+    const topRowContainer = topRowRef.current?.querySelector('.inline-flex') as HTMLElement;
+    const bottomRowContainer = bottomRowRef.current?.querySelector('.inline-flex') as HTMLElement;
 
-  useEffect(() => {
-    if (!bottomRowApi) return;
-    
-    let intervalId: NodeJS.Timeout;
-    
-    const startScroll = () => {
-      intervalId = setInterval(() => {
-        if (!bottomHoveredRef.current && bottomRowApi) {
-          bottomRowApi.scrollPrev();
-        }
-      }, 2000); // Much slower - 2 seconds between slides
+    if (!topRowContainer || !bottomRowContainer) return;
+
+    let topPosition = 0;
+    let bottomPosition = 0;
+    let topAnimationId: number;
+    let bottomAnimationId: number;
+
+    const animateTopRow = () => {
+      topPosition -= 0.5; // Move left (negative direction)
+      
+      // Get the width of one set of skills (1/4 of total width since we have 4 copies)
+      const resetPoint = -(topRowContainer.offsetWidth / 4);
+      
+      if (topPosition <= resetPoint) {
+        topPosition = 0; // Reset for seamless loop
+      }
+      
+      topRowContainer.style.transform = `translateX(${topPosition}px)`;
+      topAnimationId = requestAnimationFrame(animateTopRow);
     };
-    
-    startScroll();
-    
+
+    const animateBottomRow = () => {
+      bottomPosition -= 0.5; // Move left (same as top row for right-to-left effect)
+      
+      // Get the width of one set of skills (1/4 of total width since we have 4 copies)  
+      const resetPoint = -(bottomRowContainer.offsetWidth / 4);
+      
+      if (bottomPosition <= resetPoint) {
+        bottomPosition = 0; // Reset for seamless loop
+      }
+      
+      bottomRowContainer.style.transform = `translateX(${72 + bottomPosition}px)`;
+      bottomAnimationId = requestAnimationFrame(animateBottomRow);
+    };
+
+    // Start animations
+    animateTopRow();
+    animateBottomRow();
+
     return () => {
-      clearInterval(intervalId);
+      cancelAnimationFrame(topAnimationId);
+      cancelAnimationFrame(bottomAnimationId);
     };
-  }, [bottomRowApi]);
+  }, []);
 
   return (
     <div className="w-full space-y-4">
-      {/* Top row - moves left to right */}
-      <div 
-        className="embla overflow-hidden" 
-        ref={topRowRef}
-        onMouseEnter={() => { topHoveredRef.current = true; }}
-        onMouseLeave={() => { topHoveredRef.current = false; }}
-      >
-        <div className="embla__container flex">
-          {/* Triple the skills for seamless infinite scroll */}
-          {[...skillIcons, ...skillIcons, ...skillIcons].map((skill, index) => (
-            <div key={`top-${index}`} className="embla__slide flex-[0_0_144px] mx-2">
-              <div className="bg-base-200 border border-base-content/10 rounded-xl p-6 w-32 h-32 flex flex-col items-center justify-center hover:border-primary hover:shadow-lg transition-all duration-300 group">
-                <skill.Icon className="w-12 h-12 text-primary mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-xs font-medium text-base-content text-center">{skill.name}</span>
+      {/* Top row - Frontend skills moving left to right */}
+      <div className="relative">
+        <div 
+          className="overflow-hidden whitespace-nowrap" 
+          ref={topRowRef}
+        >
+          <div className="inline-flex">
+            {/* Multiple copies for seamless infinite scroll */}
+            {[...frontendSkills, ...frontendSkills, ...frontendSkills, ...frontendSkills].map((skill, index) => (
+              <div key={`frontend-${index}`} className="inline-block mx-2">
+                <div className="bg-base-200 border border-base-content/10 rounded-xl p-6 w-32 h-32 flex flex-col items-center justify-center hover:border-primary hover:shadow-lg transition-all duration-300 group">
+                  <skill.Icon className="w-12 h-12 text-primary mb-2 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs font-medium text-base-content text-center">{skill.name}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        {/* Left shadow gradient */}
+        <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
+        {/* Right shadow gradient */}
+        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
       </div>
 
-      {/* Bottom row - moves right to left */}
-      <div 
-        className="embla overflow-hidden" 
-        ref={bottomRowRef}
-        onMouseEnter={() => { bottomHoveredRef.current = true; }}
-        onMouseLeave={() => { bottomHoveredRef.current = false; }}
-      >
-        <div className="embla__container flex">
-          {/* Triple the skills for seamless infinite scroll */}
-          {[...skillIcons, ...skillIcons, ...skillIcons].map((skill, index) => (
-            <div key={`bottom-${index}`} className="embla__slide flex-[0_0_144px] mx-2">
-              <div className="bg-base-200 border border-base-content/10 rounded-xl p-6 w-32 h-32 flex flex-col items-center justify-center hover:border-primary hover:shadow-lg transition-all duration-300 group">
-                <skill.Icon className="w-12 h-12 text-primary mb-2 group-hover:scale-110 transition-transform" />
-                <span className="text-xs font-medium text-base-content text-center">{skill.name}</span>
+      {/* Bottom row - Backend/DevOps skills moving right to left */}
+      <div className="relative">
+        <div 
+          className="overflow-hidden whitespace-nowrap" 
+          ref={bottomRowRef}
+        >
+          <div className="inline-flex">
+            {/* Multiple copies for seamless infinite scroll */}
+            {[...backendDevOpsSkills, ...backendDevOpsSkills, ...backendDevOpsSkills, ...backendDevOpsSkills].map((skill, index) => (
+              <div key={`backend-${index}`} className="inline-block mx-2">
+                <div className="bg-base-200 border border-base-content/10 rounded-xl p-6 w-32 h-32 flex flex-col items-center justify-center hover:border-primary hover:shadow-lg transition-all duration-300 group">
+                  <skill.Icon className="w-12 h-12 text-primary mb-2 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs font-medium text-base-content text-center">{skill.name}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        {/* Left shadow gradient */}
+        <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
+        {/* Right shadow gradient */}
+        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
       </div>
     </div>
   );

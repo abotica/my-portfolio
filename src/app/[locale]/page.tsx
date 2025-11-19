@@ -5,6 +5,7 @@ import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { useEffect, useState } from 'react';
 import DownloadCards from '@/components/ui/DownloadCards';
 import SkillsCarousel from '@/components/ui/SkillsCarousel';
+import ProjectCard from '@/components/ui/ProjectCard';
 
 import {useTranslations} from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
@@ -46,7 +47,7 @@ export default function Home() {
 				</div>
 				<div className='flex flex-col gap-4 w-full tablet:flex-row tablet:justify-center'>
 					<Link variant='primary' href='#projects' className='w-full tablet:w-max'>{t('HeroSection.primaryButton')}</Link>
-					<Link variant='secondary' href='#about-me' className='w-full tablet:w-max'>{t('HeroSection.secondaryButton')}</Link>
+					<Link variant='secondary' href='#contact-me' className='w-full tablet:w-max'>{t('HeroSection.secondaryButton')}</Link>
 				</div>
 			</Section>
 			<Section variant="content" id="about-me" title={t('AboutMeSection.title')}>
@@ -56,7 +57,20 @@ export default function Home() {
 				<SkillsCarousel />
 			</Section>
 			<Section variant="content" id="projects" title={t('FeaturedProjectsSection.title')}>
-				<p className='text-lg text-base-content/70 leading-relaxed'>{t('FeaturedProjectsSection.description')}</p>
+				<p className='text-lg text-base-content/70 leading-relaxed mb-6 tablet:mb-8'>{t('FeaturedProjectsSection.description')}</p>
+				<div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-4 tablet:gap-6">
+					{t.raw('FeaturedProjectsSection.projects').map((project: any, index: number) => (
+						<ProjectCard
+							key={index}
+							title={project.title}
+							description={project.description}
+							image={project.image}
+							technologies={project.technologies}
+							liveUrl={project.liveUrl}
+							githubUrl={project.githubUrl}
+						/>
+					))}
+				</div>
 			</Section>
 			<Section variant="content" id="downloads" title={t('DownloadsSection.title')}>
 				<DownloadCards items={t.raw('DownloadsSection.items')} />

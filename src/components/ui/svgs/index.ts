@@ -18,3 +18,5 @@ export {default as Figma} from './Figma.svg';
 export {default as SEO} from './SEO.svg';
 export {default as SCSS} from './SCSS.svg';
 export {default as LanguageIcon} from './LanguageIcon.svg';
+export {default as Mail} from './Mail.svg';
+export {default as Dokploy} from './Dokploy.svg';

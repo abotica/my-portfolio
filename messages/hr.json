@@ -22,7 +22,17 @@
         },
         "FeaturedProjectsSection": {
             "title": "Istaknuti Projekti",
-            "description": "Pogledajte neke od projekata na kojima sam radio i koji prikazuju moje vještine i iskustvo u web developmentu."
+            "description": "Pogledajte neke od projekata na kojima sam radio i koji prikazuju moje vještine i iskustvo u web developmentu.",
+            "projects": [
+                {
+                    "title": "Portfolio Web Stranica",
+                    "description": "Moderna, responzivna portfolio web stranica izgrađena s Next.js-om koja uključuje odabir tema, internacionalizaciju i pregled projekata.",
+                    "image": "/projects/placeholders/my-portfolio.png",
+                    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Dokploy"],
+                    "liveUrl": "https://abotica.me",
+                    "githubUrl": "https://github.com/abotica/my-portfolio"
+                }
+            ]
         },
         "DownloadsSection": {
             "title": "Preuzimanja",
@@ -32,13 +42,6 @@
                     "description": "Preuzmite moj potpuni CV s iskustvom, obrazovanjem i certifikatima",
                     "icon": "FileText",
                     "url": "/downloadables/CV-Andrija Botica.pdf",
-                    "fileType": "PDF"
-                },
-                {
-                    "title": "Propratno Pismo",
-                    "description": "Moj template propratnog pisma i predstavljanje",
-                    "icon": "Mail",
-                    "url": "#",
                     "fileType": "PDF"
                 }
             ]

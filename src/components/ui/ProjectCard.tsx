@@ -1,0 +1,91 @@
+import { GitHub } from './svgs';
+
+type ProjectCardProps = {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+};
+
+// External link icon component (since we don't have it in svgs)
+const ExternalLinkIcon = ({ className }: { className?: string }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="24" 
+    height="24" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M15 3h6v6"></path>
+    <path d="M10 14 21 3"></path>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+  </svg>
+);
+
+function ProjectCard({ title, description, image, technologies, liveUrl, githubUrl }: ProjectCardProps) {
+  return (
+    <div className="group bg-base-200 border border-base-content/10 rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-lg">
+      {/* Project Image */}
+      <div className="relative overflow-hidden h-40 tablet:h-48 bg-base-300">
+        <img 
+          alt={title} 
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+          src={image}
+        />
+      </div>
+      
+      {/* Project Content */}
+      <div className="p-4 tablet:p-6 space-y-3 tablet:space-y-4">
+        <h3 className="text-lg tablet:text-xl font-semibold text-base-content">{title}</h3>
+        <p className="text-sm text-base-content/70 leading-relaxed">{description}</p>
+        
+        {/* Technology Tags */}
+        <div className="flex flex-wrap gap-1.5 tablet:gap-2">
+          {technologies.map((tech, index) => (
+            <span 
+              key={index}
+              className="text-xs px-2 tablet:px-3 py-1 bg-primary/10 text-primary rounded-full font-medium"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        
+        {/* Action Buttons */}
+        <div className="flex flex-col tablet:flex-row gap-2 tablet:gap-3 pt-1 tablet:pt-2">
+          {liveUrl && (
+            <a 
+              href={liveUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-center gap-2 flex-1 px-3 py-2 bg-primary text-primary-content rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
+            >
+              <ExternalLinkIcon className="w-4 h-4" />
+              Live
+            </a>
+          )}
+          {githubUrl && (
+            <a 
+              href={githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center justify-center gap-2 flex-1 px-3 py-2 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-colors text-sm font-medium"
+            >
+              <GitHub className="w-4 h-4" />
+              Code
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ProjectCard;

@@ -1,39 +1,16 @@
 'use client';
-import {light} from '@/../public/avatars'
-import { useTheme } from '@/lib/hooks/useTheme';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import { useEffect, useState } from 'react';
 import DownloadCards from '@/components/ui/DownloadCards';
 import SkillsCarousel from '@/components/ui/SkillsCarousel';
 import ProjectCard from '@/components/ui/ProjectCard';
 
 import {useTranslations} from 'next-intl';
-import { setRequestLocale } from 'next-intl/server';
-import Button from '@/components/ui/Button';
 import Section from '@/components/ui/Section';
 import Link from '@/components/ui/Link';
+import type { Project } from '@/app/[locale]/config';
 
 
 export default function Home() {
 	const t = useTranslations("HomePage");
-
-	const { theme } = useTheme();
-	const [avatar, setAvatar] = useState<StaticImport>(light);
-
-
-	const avatarMap: Record<string, StaticImport> = {
-		light: light,
-		// dark: dark,
-		// bumblebee: bumblebee,
-		// dracula: dracula
-	}
-	
-	useEffect(() => {
-        // Look up the current theme in the map
-        // If it's not found, default to 'light'
-        const newAvatar = avatarMap[theme] || light;
-        setAvatar(newAvatar);
-    }, [theme]);
 
 	return (
 		<main className='min-h-screen'>
@@ -59,7 +36,7 @@ export default function Home() {
 			<Section variant="content" id="projects" title={t('FeaturedProjectsSection.title')}>
 				<p className='text-lg text-base-content/70 leading-relaxed mb-6 tablet:mb-8'>{t('FeaturedProjectsSection.description')}</p>
 				<div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-4 tablet:gap-6">
-					{t.raw('FeaturedProjectsSection.projects').map((project: any, index: number) => (
+					{t.raw('FeaturedProjectsSection.projects').map((project: Project, index: number) => (
 						<ProjectCard
 							key={index}
 							title={project.title}

@@ -2,61 +2,6 @@
 @plugin 'daisyui';
 
 @layer base {
-	/* Scroll-Driven animation */
-	/* Add fallback for Firefox */
-	
-	.roadmap {
-		view-timeline-name: --svg-timeline;
-	}
-
-	.roadmap path {
-		stroke-dasharray: 1;
-		stroke-dashoffset: 1;
-
-		will-change: stroke-dashoffset;
-
-		animation: on-scroll linear forwards;
-		animation-timeline: --svg-timeline;
-		
-	}
-
-	.roadmap circle {
-		opacity: 0;
-
-		transform-origin: center;
-
-		will-change: opacity;
-
-		animation: appear linear forwards;
-		animation-timeline: --svg-timeline;
-	}
-
-	.roadmap circle:nth-of-type(1) {
-		animation-range: cover 25% cover 35%;
-	}
-
-	.roadmap circle:nth-of-type(2) {
-		animation-range: cover 60% cover 70%;
-	}
-
-	@keyframes appear {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	@keyframes on-scroll {
-		from {
-			stroke-dashoffset: 1;
-		}
-		to {
-			stroke-dashoffset: 0;
-		}
-	}
-
 	/* Embla Carousel Styles */
 	.embla {
 		overflow: hidden;

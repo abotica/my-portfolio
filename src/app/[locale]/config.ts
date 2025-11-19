@@ -50,5 +50,23 @@ export const backendDevOpsSkills = [
   { name: 'Figma', Icon: Figma },
 ];
 
+// Type definitions
+export type Project = {
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+};
+
+export type Download = {
+  title: string;
+  description: string;
+  fileUrl: string;
+  fileSize: string;
+  fileType: string;
+};
+
 export type Theme = (typeof themes)[number];
 export type ColorScheme = 'dark' | 'light' | 'no-preference';

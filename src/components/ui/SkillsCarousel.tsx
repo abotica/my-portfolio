@@ -1,4 +1,3 @@
-import useEmblaCarousel from 'embla-carousel-react'
 import { useEffect, useRef } from 'react'
 import { frontendSkills, backendDevOpsSkills } from '../../app/[locale]/config';
 

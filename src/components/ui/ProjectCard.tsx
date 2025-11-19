@@ -1,4 +1,5 @@
-import { GitHub } from './svgs';
+import { GitHub, ExternalLink } from './svgs';
+import Image from 'next/image';
 
 type ProjectCardProps = {
   title: string;
@@ -8,33 +9,12 @@ type ProjectCardProps = {
   liveUrl?: string;
   githubUrl?: string;
 };
-
-// External link icon component (since we don't have it in svgs)
-const ExternalLinkIcon = ({ className }: { className?: string }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width="24" 
-    height="24" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <path d="M15 3h6v6"></path>
-    <path d="M10 14 21 3"></path>
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-  </svg>
-);
-
 function ProjectCard({ title, description, image, technologies, liveUrl, githubUrl }: ProjectCardProps) {
   return (
     <div className="group bg-base-200 border border-base-content/10 rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-lg">
       {/* Project Image */}
       <div className="relative overflow-hidden h-40 tablet:h-48 bg-base-300">
-        <img 
+        <Image 
           alt={title} 
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
           src={image}
@@ -67,7 +47,7 @@ function ProjectCard({ title, description, image, technologies, liveUrl, githubU
               rel="noopener noreferrer" 
               className="flex items-center justify-center gap-2 flex-1 px-3 py-2 bg-primary text-primary-content rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
             >
-              <ExternalLinkIcon className="w-4 h-4" />
+              <ExternalLink className="w-4 h-4" />
               Live
             </a>
           )}

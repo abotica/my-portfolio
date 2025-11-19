@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 import { GitHub, Instagram, LinkedIn, Mail } from '../ui/svgs';
-import { socialsStyle } from '@/app/[locale]/config';
 
 function Footer() {
 	return (

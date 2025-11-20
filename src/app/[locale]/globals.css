@@ -33,6 +33,8 @@
 
 	/* Light theme (default) */
 	:root {
+		padding: env(safe-area-inset);
+		background-position: center;
 		/* Colors */
 		--color-base-100: oklch(98% 0.003 247.858);
 		--color-base-200: oklch(96% 0.007 247.896);

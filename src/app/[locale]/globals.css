@@ -33,7 +33,6 @@
 
 	/* Light theme (default) */
 	:root {
-		background-color: var(--color-base-100);
 		/* Colors */
 		--color-base-100: oklch(98% 0.003 247.858);
 		--color-base-200: oklch(96% 0.007 247.896);

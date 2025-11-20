@@ -30,8 +30,10 @@
 		font-size: var(--text-2xl);
 		font-weight: var(--font-weight-normal);
 	}
+
 	/* Light theme (default) */
 	:root {
+		background-color: var(--color-base-100);
 		/* Colors */
 		--color-base-100: oklch(98% 0.003 247.858);
 		--color-base-200: oklch(96% 0.007 247.896);
@@ -54,8 +56,8 @@
 		--color-error: oklch(57% 0.245 27.325);
 		--color-error-content: oklch(97% 0.013 17.38);
 		/* Other */
-		--radius-selector: 1rem;
-		--radius-field: 1rem;
+		/* --radius-selector: 1rem; */
+		/* --radius-field: 1rem; */
 		--radius-box: 0rem;
 		--size-selector: 0.25rem;
 		--size-field: 0.25rem;
@@ -86,8 +88,8 @@
 			--color-error: oklch(71% 0.194 13.428);
 			--color-error-content: oklch(27% 0.105 12.094);
 			/* Other */
-			--radius-selector: 0.5rem;
-			--radius-field: 0.25rem;
+			/* --radius-selector: 0.5rem; */
+			/* --radius-field: 0.25rem; */
 			--radius-box: 0.5rem;
 			--size-selector: 0.25rem;
 			--size-field: 0.25rem;
@@ -119,8 +121,8 @@
 		--color-error: oklch(57% 0.245 27.325);
 		--color-error-content: oklch(97% 0.013 17.38);
 		/* Other */
-		--radius-selector: 1rem;
-		--radius-field: 1rem;
+		/* --radius-selector: 1rem; */
+		/* --radius-field: 1rem; */
 		--radius-box: 0rem;
 		--size-selector: 0.25rem;
 		--size-field: 0.25rem;
@@ -152,8 +154,8 @@
 		--color-error: oklch(71% 0.194 13.428);
 		--color-error-content: oklch(27% 0.105 12.094);
 		/* Other */
-		--radius-selector: 0.5rem;
-		--radius-field: 0.25rem;
+		/* --radius-selector: 0.5rem; */
+		/* --radius-field: 0.25rem; */
 		--radius-box: 0.5rem;
 		--size-selector: 0.25rem;
 		--size-field: 0.25rem;
@@ -185,8 +187,8 @@
 		--color-error: oklch(70% 0.191 22.216);
 		--color-error-content: oklch(39% 0.141 25.723);
 		/* Other */
-		--radius-selector: 1rem;
-		--radius-field: 0.5rem;
+		/* --radius-selector: 1rem; */
+		/* --radius-field: 0.5rem; */
 		--radius-box: 1rem;
 		--size-selector: 0.25rem;
 		--size-field: 0.25rem;
@@ -218,8 +220,8 @@
 		--color-error: oklch(51.61% 0.146 29.674);
 		--color-error-content: oklch(90.322% 0.029 29.674);
 		/* Other */
-		--radius-selector: 0rem;
-		--radius-field: 0.25rem;
+		/* --radius-selector: 0rem; */
+		/* --radius-field: 0.25rem; */
 		--radius-box: 0.25rem;
 		--size-selector: 0.25rem;
 		--size-field: 0.25rem;
@@ -251,8 +253,8 @@
 		--color-error: oklch(71.76% 0.221 22.18);
 		--color-error-content: oklch(0% 0 0);
 		/* Other */
-		--radius-selector: 1rem;
-		--radius-field: 2rem;
+		/* --radius-selector: 1rem; */
+		/* --radius-field: 2rem; */
 		--radius-box: 1rem;
 		--size-selector: 0.25rem;
 		--size-field: 0.25rem;
@@ -282,8 +284,8 @@
 		--color-warning-content: oklch(19.106% 0.026 112.757);
 		--color-error: oklch(68.22% 0.206 24.43);
 		--color-error-content: oklch(13.644% 0.041 24.43);
-		--radius-selector: 1rem;
-		--radius-field: 0.5rem;
+		/* --radius-selector: 1rem; */
+		/* --radius-field: 0.5rem; */
 		--radius-box: 1rem;
 		--size-selector: 0.25rem;
 		--size-field: 0.25rem;
@@ -361,12 +363,12 @@
 		border-end-start-radius: var(--radius-field);
 		padding: 0.8rem 1.6rem;
 	} */
-	.border-radius-theme {
+	/* .border-radius-theme {
 		border-start-start-radius: var(--radius-field);
 		border-start-end-radius: var(--radius-field);
 		border-end-end-radius: var(--radius-field);
 		border-end-start-radius: var(--radius-field);
-	}
+	} */
 
 	.theme-dropdown {
 		background-color: var(--color-base-100);
@@ -376,3 +378,4 @@
 		padding: calc(var(--spacing) * 1);
 	}
 }
+

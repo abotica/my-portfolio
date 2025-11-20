@@ -1,5 +1,4 @@
 'use client';
-import DownloadCards from '@/components/ui/DownloadCards';
 import SkillsCarousel from '@/components/ui/SkillsCarousel';
 import ProjectCard from '@/components/ui/ProjectCard';
 
@@ -7,6 +6,7 @@ import {useTranslations} from 'next-intl';
 import Section from '@/components/ui/Section';
 import Link from '@/components/ui/Link';
 import type { Project } from '@/app/[locale]/config';
+import DownloadCardsGrid from '@/components/ui/download-cards/DownloadCardsGrid';
 
 
 export default function Home() {
@@ -50,7 +50,7 @@ export default function Home() {
 				</div>
 			</Section>
 			<Section variant="content" id="downloads" title={t('DownloadsSection.title')}>
-				<DownloadCards items={t.raw('DownloadsSection.items')} />
+				<DownloadCardsGrid items={t.raw('DownloadsSection.items')} />
 			</Section>
 		</main>
 	);

@@ -18,7 +18,7 @@ function LanguageDropdownList() {
                 <li key={loc} className={loc === locale ? 'active' : ''}>
                     <button
                         type='button'
-                        className='w-full text-left'
+                        className={`w-full text-left ${loc === locale ? "bg-base-content/10" : ""}`}
                         onClick={() => switchLocale(locale, loc, router, pathname)}
                     >
                         {loc.toUpperCase()}

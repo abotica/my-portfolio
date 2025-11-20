@@ -10,8 +10,6 @@ import {
   Dokploy
 } from '../../components/ui/svgs';
 
-export const socialsStyle =
-	'text-primary bg-primary-content size-6 border-radius-theme' as const;
 export const themes = [
 	'light',
 	'dark',
@@ -66,6 +64,18 @@ export type Download = {
   fileUrl: string;
   fileSize: string;
   fileType: string;
+};
+
+type DownloadItem = {
+  title: string;
+  description: string;
+  icon: string;
+  url: string;
+  fileType: string;
+};
+
+export type DownloadCardsProps = {
+  items: DownloadItem[];
 };
 
 export type Theme = (typeof themes)[number];

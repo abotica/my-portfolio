@@ -3,6 +3,14 @@ name: Build Docker images
 on:
   push:
     branches: ["main"]
+    paths-ignore: 
+      - "/Dockerfile"
+      - "/.dockerignore"
+      - "/.env*"
+      - "/README.md"
+      - "/.github/**"
+      - "/.vscode/**"
+
  
 jobs:
   build-and-push-dockerfile-image:
@@ -13,7 +21,7 @@ jobs:
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          content: "🚀 Deployment started for ${{ github.repository }} on branch ${{ github.ref }}."
+          content: "🚀 Deployment started for ${{ github.repository }}..."
 
       - name: Checkout repository
         uses: actions/checkout@v3

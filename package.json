@@ -9,8 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@octokit/rest": "^22.0.0",
-    "@vercel/speed-insights": "^1.2.0",
+    "@octokit/core": "^7.0.6",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "next": "15.5.4",

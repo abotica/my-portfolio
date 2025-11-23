@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
+      - name: Send Discord Notification
+        uses: tsickert/discord-webhook@v7.0.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          content: "🚀 Deployment started for ${{ github.repository }} on branch ${{ github.ref }}."
+
       - name: Checkout repository
         uses: actions/checkout@v3
  
@@ -27,4 +33,18 @@ jobs:
           # Make sure to replace with your own namespace and repository
           tags: |
             abotica/my-portfolio:latest 
-          platforms: linux/amd64     
+          platforms: linux/amd64
+
+      - name: Send Discord Notification
+        uses: tsickert/discord-webhook@v7.0.0
+        if: success()
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          content: "✅ Deployment succeeded for ${{ github.repository }}!"
+          
+      - name: Send Discord Notification
+        uses: tsickert/discord-webhook@v7.0.0
+        if: failure()
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          content: "❌ Deployment failed for ${{ github.repository }}. Status code: ${{ job.status }}."

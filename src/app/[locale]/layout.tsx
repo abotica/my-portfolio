@@ -1,6 +1,6 @@
+import './globals.css';
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
-import './globals.css';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import Providers from '@/providers/Providers';
@@ -45,6 +45,7 @@ export default async function RootLayout({ children, params }: Props) {
 		// Add header and footer and HTML for SEO
 		<html
 			lang={locale}
+			data-scroll-behavior="smooth"
 			className='scroll-smooth'
 			>
 			<body className={`${outfit.className} antialiased`}>

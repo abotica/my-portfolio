@@ -1,16 +1,19 @@
-'use client';
 import SkillsCarousel from '@/components/ui/SkillsCarousel';
-import ProjectCard from '@/components/ui/ProjectCard';
 
-import {useTranslations} from 'next-intl';
+import { getMessages, getTranslations } from 'next-intl/server';
 import Section from '@/components/ui/Section';
 import Link from '@/components/ui/Link';
-import type { Project } from '@/app/[locale]/config';
 import DownloadCardsGrid from '@/components/ui/download-cards/DownloadCardsGrid';
+import { getGithubRepos } from '@/lib/utils';
+import CardContainer from '@/components/ui/CardContainer';
 
 
-export default function Home() {
-	const t = useTranslations("HomePage");
+export default async function Home() {
+	const t = await getTranslations("HomePage");
+	const messages = await getMessages();
+	const { myReposFlattened: myGitHubRepos, collaboratedReposFlattened: collaboratedGitHubRepos } = await getGithubRepos();
+
+	const downloadItems = messages.HomePage.DownloadsSection.items;
 
 	return (
 		<main className='min-h-screen'>
@@ -18,7 +21,7 @@ export default function Home() {
 			<Section variant="hero" id="home">
 				<div className='flex flex-col items-center'>
 					<p className='text-lg sm:text-xl text-secondary font-medium mb-2'>{t('HeroSection.greeting')}</p>
-					<h1 className='text-5xl tablet:text-6xl desktop:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight'>{t('HeroSection.name')}</h1>
+					<h1 className='text-5xl tablet:text-6xl desktop:text-7xl font-bold mb-6 bg-linear-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight'>{t('HeroSection.name')}</h1>
 					<h2 className='text-xl sm:text-2xl text-secondary font-semibold mb-6'>{t('HeroSection.job')}</h2>
 					<p className='text-lg sm:text-xl text-base-content/70 text-center max-w-2xl mx-auto mb-8 leading-relaxed'>{t('HeroSection.description')}</p>
 				</div>
@@ -35,22 +38,14 @@ export default function Home() {
 			</Section>
 			<Section variant="content" id="projects" title={t('FeaturedProjectsSection.title')}>
 				<p className='text-lg text-base-content/70 leading-relaxed mb-6 tablet:mb-8'>{t('FeaturedProjectsSection.description')}</p>
-				<div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-4 tablet:gap-6">
-					{t.raw('FeaturedProjectsSection.projects').map((project: Project, index: number) => (
-						<ProjectCard
-							key={index}
-							title={project.title}
-							description={project.description}
-							image={project.image}
-							technologies={project.technologies}
-							liveUrl={project.liveUrl}
-							githubUrl={project.githubUrl}
-						/>
-					))}
+
+				<div className="flex flex-col gap-12">
+					<CardContainer repos={myGitHubRepos} title={t('FeaturedProjectsSection.cardContainer.title')} t={t} />
+					<CardContainer repos={collaboratedGitHubRepos} title={t('FeaturedProjectsSection.cardContainer.collaboratedTitle')} t={t} />
 				</div>
 			</Section>
 			<Section variant="content" id="downloads" title={t('DownloadsSection.title')}>
-				<DownloadCardsGrid items={t.raw('DownloadsSection.items')} />
+				<DownloadCardsGrid items={downloadItems} />
 			</Section>
 		</main>
 	);

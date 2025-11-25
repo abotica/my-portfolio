@@ -10,6 +10,8 @@ import {
   Dokploy
 } from '../../components/ui/svgs';
 
+import messages from '@/../messages/en.json';
+
 export const themes = [
 	'light',
 	'dark',
@@ -49,14 +51,6 @@ export const backendDevOpsSkills = [
 ];
 
 // Type definitions
-export type Project = {
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-};
 
 export type Download = {
   title: string;
@@ -72,11 +66,18 @@ type DownloadItem = {
   icon: string;
   url: string;
   fileType: string;
+  callToAction: string;
 };
 
 export type DownloadCardsProps = {
   items: DownloadItem[];
 };
+ 
+declare module 'next-intl' {
+  interface AppConfig {
+    Messages: typeof messages;
+  }
+}
 
 export type Theme = (typeof themes)[number];
 export type ColorScheme = 'dark' | 'light' | 'no-preference';

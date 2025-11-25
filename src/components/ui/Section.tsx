@@ -14,7 +14,7 @@ function Section({ children, title, titleClassName, variant = "content", id, cla
     variant === "hero"
       ? "flex flex-col items-center overflow-clip min-h-[calc(100vh_-_64px)]"
       : variant === "content"
-      ? "min-h-screen"
+      ? "min-h-screen py-16"
       : "min-h-screen"; // full variant - same as content for now
 
   const titleStyle = "text-base-content text-center pb-9";

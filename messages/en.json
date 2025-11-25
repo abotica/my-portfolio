@@ -21,18 +21,21 @@
             "description": "Here are the technologies and tools I work with on a regular basis."
         },
         "FeaturedProjectsSection": {
+            "githubCta": "Code",
+            "liveCta": "Live",
             "title": "Featured Projects",
             "description": "Take a look at some of the projects I've worked on that showcase my skills and experience in web development.",
-            "projects": [
-                {
-                    "title": "Portfolio Website",
-                    "description": "A modern, responsive portfolio website built with Next.js featuring multiple themes, internationalization, and project previews",
-                    "image": "/projects/placeholders/my-portfolio.png",
-                    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Dokploy"],
-                    "liveUrl": "https://abotica.me",
-                    "githubUrl": "https://github.com/abotica/my-portfolio"
-                }
-            ]
+            "cardContainer": {
+                "title": "My Projects",
+                "collaboratedTitle": "Projects I've Collaborated On"
+            },
+            "card": {
+                "githubCta": "Code",
+                "liveCta": "Live",
+                "descriptionNotFound": "No description available for this project",
+                "techologiesNotFound": "Technologies not listed for this project"
+            },
+            "noProjectsFound": "No projects found."
         },
         "DownloadsSection": {
             "title": "Downloads",
@@ -42,7 +45,8 @@
                     "description": "Download my full CV with experience, education, and certifications",
                     "icon": "FileText",
                     "url": "/downloadables/CV-Andrija Botica.pdf",
-                    "fileType": "PDF"
+                    "fileType": "PDF",
+                    "callToAction": "Download my CV"
                 }
             ]
         }

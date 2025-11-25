@@ -24,7 +24,7 @@ function DownloadCard({ items }: DownloadCardsProps) {
 
             <div className="flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
               <Download className="w-4 h-4" />
-              <span>Download</span>
+              <span>{item.callToAction}</span>
             </div>
           </a>
         );

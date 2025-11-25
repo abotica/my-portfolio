@@ -1,6 +1,5 @@
 import ProjectCard from '@/components/ui/ProjectCard';
-import { useTranslations } from 'next-intl';
-type Translator = ReturnType<typeof useTranslations>;
+import { Translator } from '@/app/[locale]/config';
 
 type CardContainerProps = {
     repos: {
@@ -30,7 +29,7 @@ function CardContainer({repos, title, t}: CardContainerProps) {
                                     liveUrl={repo.liveUrl}
                                     githubUrl={repo.githubUrl}
                                 />
-                            )) : <p>{t('FeaturedProjectsSection.noProjectsFound')}</p>}
+                            )) : <p className='text-lg text-base-content/70 leading-relaxed mb-6 tablet:mb-8'>{t('FeaturedProjectsSection.noProjectsFound')}</p>}
             
                         </div>
         </div>

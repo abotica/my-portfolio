@@ -4,15 +4,13 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import Section from '@/components/ui/Section';
 import Link from '@/components/ui/Link';
 import DownloadCardsGrid from '@/components/ui/download-cards/DownloadCardsGrid';
-import { getGithubRepos } from '@/lib/utils';
+import { getGithubRepos } from '@/lib/utils/github';
 import CardContainer from '@/components/ui/CardContainer';
-
 
 export default async function Home() {
 	const t = await getTranslations("HomePage");
 	const messages = await getMessages();
 	const { myReposFlattened: myGitHubRepos, collaboratedReposFlattened: collaboratedGitHubRepos } = await getGithubRepos();
-
 	const downloadItems = messages.HomePage.DownloadsSection.items;
 
 	return (

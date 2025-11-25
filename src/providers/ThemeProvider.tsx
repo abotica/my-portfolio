@@ -4,7 +4,7 @@
 
 import ThemeContext from '@/contexts/ThemeContext';
 import { useState, useEffect, ReactNode } from 'react';
-import { getPreferredColorScheme } from '@/lib/utils';
+import { getPreferredColorScheme } from '@/lib/utils/getPreferredColorScheme';
 import { Theme } from '@/app/[locale]/config';
 
 function ThemeProvider({ children }: { children: ReactNode }) {

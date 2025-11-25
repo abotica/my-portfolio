@@ -1,32 +1,37 @@
 import { GitHub, ExternalLink } from './svgs';
 import Image from 'next/image';
+import { kebabCase, sentenceCase } from 'text-case';
+import { fileExistsInPublic } from '@/lib/utils/fileExistsInPublic';
 
-import { useTranslations } from 'next-intl';
-type Translator = ReturnType<typeof useTranslations>;
+import { Translator } from '@/app/[locale]/config';
 
 type ProjectCardProps = {
 	title: string;
 	description: string | null;
-	image?: string;
 	technologies: string[];
 	liveUrl: string | null;
 	githubUrl: string;
 	t: Translator;
 };
 
-function ProjectCard({ ...props }: ProjectCardProps) {
+async function ProjectCard({ ...props }: ProjectCardProps) {
+
+	const relative = `projects/${kebabCase(props.title)}/thumbnail.png`;
+	const exists = await fileExistsInPublic(relative);
+	
+	const src = exists ? `/${relative}` : '/projects/_fallback/thumbnail.png';
+
 	return (
 		<div className='group bg-base-200 border border-base-content/10 rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-lg'>
 			{/* Project Image */}
 			<div className='relative overflow-hidden h-40 tablet:h-48 bg-base-300'>
-				<Image 
-          alt={props.title} 
-          className="w-auto h-full object-contain group-hover:scale-105 transition-transform duration-300" 
-          src={'/image-svgrepo-com.png'}
-          fill
-          sizes='(min-width: 0px) 100%'
-          priority
-        />
+				<Image
+					alt={sentenceCase(props.title) + ' project thumbnail'}
+					className='object-cover group-hover:scale-110 transition-transform duration-300'
+					src={src}
+					fill
+					sizes='(max-width: 768px) calc(100vw - 32px), (max-width: 1024px) 45vw, (max-width: 1280px) 30vw'
+				/>
 			</div>
 
 			{/* Project Content */}
@@ -35,7 +40,8 @@ function ProjectCard({ ...props }: ProjectCardProps) {
 					{props.title}
 				</h3>
 				<p className='text-sm text-base-content/70 leading-relaxed text-ellipsis line-clamp-3 h-19.5 desktop:line-clamp-2 desktop:h-13'>
-					{props.description || props.t('FeaturedProjectsSection.card.descriptionNotFound')}
+					{props.description ||
+						props.t('FeaturedProjectsSection.card.descriptionNotFound')}
 				</p>
 
 				{/* Technology Tags */}

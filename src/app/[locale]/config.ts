@@ -15,8 +15,6 @@ import messages from '@/../messages/en.json';
 export const themes = [
 	'light',
 	'dark',
-	'bumblebee',
-	'business',
 	'forest',
 	'dracula',
 ] as const;
@@ -78,6 +76,8 @@ declare module 'next-intl' {
     Messages: typeof messages;
   }
 }
+
+export type Translator = Awaited<ReturnType<typeof import('next-intl/server').getTranslations>>;
 
 export type Theme = (typeof themes)[number];
 export type ColorScheme = 'dark' | 'light' | 'no-preference';

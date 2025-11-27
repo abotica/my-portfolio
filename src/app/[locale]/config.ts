@@ -17,6 +17,8 @@ export const themes = [
 	'dark',
 	'forest',
 	'dracula',
+  'winter',
+  'sunset'
 ] as const;
 
 // Available skill SVGs from the svgs folder

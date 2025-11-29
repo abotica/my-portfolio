@@ -50,5 +50,22 @@
                 }
             ]
         }
+    },
+    "Footer": {
+        "brand": {
+            "name": "Dev",
+            "description": "Building beautiful digital experiences with modern technologies."
+        },
+        "links": {
+            "title": "Quick Links",
+            "about": "About Me",
+            "skills": "Skills",
+            "projects": "Projects",
+            "downloads": "Downloads"
+        },
+        "contact": {
+            "title": "Connect"
+        },
+        "copyright": "© {year} Andrija Botica. All rights reserved."
     }
 }

@@ -48,5 +48,23 @@
                 }
             ]
         }
+    },
+    "Footer": {
+        "brand": {
+            "name": "Dev",
+            "description": "Izgradnja prekrasnih digitalnih iskustava s modernim tehnologijama."
+        },
+        "links": {
+            "title": "Poveznice",
+            "home": "Početna",
+            "about": "O Meni",
+            "skills": "Vještine",
+            "projects": "Projekti",
+            "downloads": "Preuzimanja"
+        },
+        "contact": {
+            "title": "Kontakt"
+        },
+        "copyright": "© {year} Andrija Botica. Sva prava pridržana."
     }
 }

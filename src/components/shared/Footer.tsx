@@ -1,44 +1,46 @@
 import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 
 import { GitHub, Instagram, LinkedIn, Mail } from '../ui/svgs';
 
-function Footer() {
+async function Footer() {
+	const t = await getTranslations('Footer');
 	return (
 		<footer className="border-t border-base-content/10 py-12 tablet:py-16 px-4 tablet:px-6 desktop:px-8">
 			<div className="max-w-6xl mx-auto">
 				<div className="grid tablet:grid-cols-3 gap-8 tablet:gap-12 mb-8 tablet:mb-12">
 					{/* Brand Section */}
 					<div>
-						<h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-							Dev
+						<h3 className="text-xl font-bold mb-4 bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
+							{t('brand.name')}
 						</h3>
 						<p className="text-base-content/70 text-sm leading-relaxed">
-							Building beautiful digital experiences with modern technologies.
+							{t('brand.description')}
 						</p>
 					</div>
 
 					{/* Quick Links */}
 					<div>
-						<h4 className="font-semibold mb-4 text-base-content">Quick Links</h4>
+						<h4 className="font-semibold mb-4 text-base-content">{t('links.title')}</h4>
 						<ul className="space-y-2 text-sm">
 							<li>
 								<Link href="#about-me" className="text-base-content/70 hover:text-base-content transition-colors">
-									About
+									{t('links.about')}
 								</Link>
 							</li>
 							<li>
 								<Link href="#skills" className="text-base-content/70 hover:text-base-content transition-colors">
-									Skills
+									{t('links.skills')}
 								</Link>
 							</li>
 							<li>
 								<Link href="#projects" className="text-base-content/70 hover:text-base-content transition-colors">
-									Projects
+									{t('links.projects')}
 								</Link>
 							</li>
 							<li>
 								<Link href="#downloads" className="text-base-content/70 hover:text-base-content transition-colors">
-									Downloads
+									{t('links.downloads')}
 								</Link>
 							</li>
 						</ul>
@@ -46,7 +48,7 @@ function Footer() {
 
 					{/* Social Links */}
 					<div id='contact-me'>
-						<h4 className="font-semibold mb-4 text-base-content">Connect</h4>
+						<h4 className="font-semibold mb-4 text-base-content">{t('contact.title')}</h4>
 						<div className="flex gap-3">
 							<Link 
 								href="https://github.com/abotica" 
@@ -92,7 +94,7 @@ function Footer() {
 
 				{/* Bottom Section */}
 				<div className="border-t border-base-content/10 pt-6 tablet:pt-8 flex flex-col tablet:flex-row justify-between items-center gap-4 text-base-content/70">
-					<p className='text-sm'>© 2025 Andrija Botica. All rights reserved.</p>
+					<p className='text-sm'>{t('copyright', { year: new Date().getFullYear() })}</p>
 				</div>
 			</div>
 		</footer>

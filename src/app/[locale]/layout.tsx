@@ -10,6 +10,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import {getTranslations} from 'next-intl/server';
+import KofiWidget from '@/components/ui/KofiWidget';
 
 export async function generateMetadata(params: Promise<{locale: string}>): Promise<Metadata> {
   const {locale} = await params;
@@ -53,6 +54,7 @@ export default async function RootLayout({ children, params }: Props) {
 					<Header />
 					{children}
 					<Footer />
+				<KofiWidget />
 				</Providers>
 			</body>
 		</html>

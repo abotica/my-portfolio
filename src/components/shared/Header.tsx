@@ -11,7 +11,7 @@ function Header() {
 	return (
 		<header className={`bg-base-100/90 flex items-center text-base-content shadow-base-content/10 sticky top-0 z-30 backdrop-blur-sm transition-shadow duration-100 px-4 ${isScrolled ? 'shadow-xs' : ''}`}
             >
-            <Link href="" aria-label='Portfolio icon'><Image src="/avatars/andrija.jpg" alt="Andrija Botica" width={40} height={40} className="rounded-full" /></Link>
+            <Link href="#home" aria-label='Portfolio icon'><Image src="/avatars/andrija.jpg" alt="Andrija Botica" width={40} height={40} className="rounded-full" /></Link>
 			<nav className='navbar justify-end p-0'>
 				<ThemeDropdownButton />
 				<LanguageDropdownButton />

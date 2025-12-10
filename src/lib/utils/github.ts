@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/core';
 import type { GetGitHubReposQuery } from '@/generated/graphql';
-import { capitalCase, sentenceCase } from 'text-case';
+import { capitalCase, pascalCaseTransformMerge, sentenceCase } from 'text-case';
 
 export async function getGithubRepos() {
 	const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
@@ -23,6 +23,9 @@ export async function getGithubRepos() {
 							login
 						}
 						homepageUrl
+						primaryLanguage {
+							name
+						}
 						repositoryTopics(first: 10) {
 							nodes {
 								topic {
@@ -44,6 +47,14 @@ export async function getGithubRepos() {
 						description
 						url
 						homepageUrl
+						collaborators {
+							nodes {
+								login
+							}
+						}
+						primaryLanguage {
+							name
+						}
 						repositoryTopics(first: 10) {
 							nodes {
 								topic {
@@ -79,7 +90,9 @@ export async function getGithubRepos() {
 		technologies:
 			(rn?.repositoryTopics?.nodes
 				?.map((tn) => tn?.topic.name)
-				.filter(t => t !== 'on-my-portfolio' && Boolean(t)) as string[]) || [],
+				.filter((t) => t !== 'on-my-portfolio' && Boolean(t)) as string[]) ||
+			[],
+		language: rn?.primaryLanguage?.name.replace(' ', '') as string | null
 	}));
 
 	const collaboratedReposFlattened =
@@ -92,12 +105,12 @@ export async function getGithubRepos() {
 				(rn?.repositoryTopics?.nodes
 					?.map((tn) => tn?.topic.name)
 					.filter(Boolean) as string[]) || [],
+			language: rn?.primaryLanguage?.name.replace(' ', '') as string | null
 		}));
+
 
 	return {
 		myReposFlattened,
 		collaboratedReposFlattened,
 	};
 }
-
-

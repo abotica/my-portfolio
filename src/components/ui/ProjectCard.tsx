@@ -1,7 +1,8 @@
 import { GitHub, ExternalLink } from './svgs';
+import { sentenceCase } from 'text-case';
 import Image from 'next/image';
-import { kebabCase, sentenceCase } from 'text-case';
-import { fileExistsInPublic } from '@/lib/utils/fileExistsInPublic';
+import { svgComponents } from './svgs';
+import React from 'react';
 
 import { Translator } from '@/app/[locale]/config';
 
@@ -12,34 +13,41 @@ type ProjectCardProps = {
 	liveUrl: string | null;
 	githubUrl: string;
 	t: Translator;
+	language: string | null;
 };
 
 async function ProjectCard({ ...props }: ProjectCardProps) {
 
-	const relative = `projects/${kebabCase(props.title)}/thumbnail.png`;
-	const exists = await fileExistsInPublic(relative);
-	
-	const src = exists ? `/${relative}` : '/projects/_fallback/thumbnail.png';
+	// @ts-ignore
+	const IconComponent = svgComponents[props.language];
 
 	return (
 		<div className='group bg-base-200 border border-base-content/10 rounded-xl overflow-hidden hover:border-primary transition-all hover:shadow-lg'>
 			{/* Project Image */}
 			<div className='relative overflow-hidden h-40 tablet:h-48 bg-base-300'>
-				<Image
-					alt={sentenceCase(props.title) + ' project thumbnail'}
-					className='object-cover group-hover:scale-110 transition-transform duration-300'
-					src={src}
-					fill
-					sizes='(max-width: 768px) calc(100vw - 32px), (max-width: 1024px) 45vw, (max-width: 1280px) 30vw'
-				/>
+				{IconComponent ? (
+					<div className='w-full h-full flex items-center justify-center'>
+						{React.createElement(IconComponent, {
+							className: 'h-full py-6 tablet:w-32 tablet:h-32 object-contain group-hover:scale-110 transition-transform duration-300 desktop:py-6',
+						})}
+					</div>
+				) : (
+					<Image
+						alt={sentenceCase(props.title + ' project thumbnail')}
+						className='object-contain group-hover:scale-110 transition-transform duration-300'
+						src={'/images/thumbnail-fallback.png'}
+						fill
+						sizes='(max-width: 768px) calc(100vw - 32px), (max-width: 1024px) 45vw, (max-width: 1280px) 30vw'
+					/>
+				)}
 			</div>
 
 			{/* Project Content */}
-			<div className='p-4 tablet:p-6 space-y-3 tablet:space-y-4'>
+			<div className='p-4 tablet:p-6 space-y-3 tablet:space-y-4 flex flex-col h-full'>
 				<h3 className='text-lg tablet:text-xl font-semibold text-base-content'>
 					{props.title}
 				</h3>
-				<p className='text-sm text-base-content/70 leading-relaxed text-ellipsis line-clamp-3 h-19.5 desktop:line-clamp-2 desktop:h-13'>
+				<p className='text-sm text-base-content/70 leading-relaxed text-ellipsis line-clamp-3 desktop:line-clamp-2'>
 					{props.description ||
 						props.t('FeaturedProjectsSection.card.descriptionNotFound')}
 				</p>
@@ -55,7 +63,7 @@ async function ProjectCard({ ...props }: ProjectCardProps) {
 							</span>
 						))
 					) : (
-						<p className='text-sm text-base-content/70 leading-relaxed text-ellipsis line-clamp-3 h-19.5 desktop:line-clamp-2 desktop:h-13'>
+						<p className='text-sm text-base-content/70 leading-relaxed text-ellipsis line-clamp-3 desktop:line-clamp-2'>
 							{props.t('FeaturedProjectsSection.card.techologiesNotFound')}
 						</p>
 					)}

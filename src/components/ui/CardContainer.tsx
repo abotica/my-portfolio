@@ -8,6 +8,7 @@ type CardContainerProps = {
         technologies: string[];
         liveUrl: string | null;
         githubUrl: string;
+        language: string | null;
     }[] | undefined;
     title: string | undefined;
     t: Translator;
@@ -28,6 +29,7 @@ function CardContainer({repos, title, t}: CardContainerProps) {
                                     technologies={repo.technologies}
                                     liveUrl={repo.liveUrl}
                                     githubUrl={repo.githubUrl}
+                                    language={repo.language}
                                 />
                             )) : <p className='text-lg text-base-content/70 leading-relaxed mb-6 tablet:mb-8'>{t('FeaturedProjectsSection.noProjectsFound')}</p>}
             

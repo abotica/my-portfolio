@@ -77,9 +77,9 @@ function SkillsCarousel() {
           </div>
         </div>
         {/* Left shadow gradient */}
-        <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
+        <div className="absolute top-0 left-0 w-16 h-full bg-linear-to-r from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
         {/* Right shadow gradient */}
-        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
+        <div className="absolute top-0 right-0 w-16 h-full bg-linear-to-l from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
       </div>
 
       {/* Bottom row - Backend/DevOps skills moving right to left */}
@@ -101,9 +101,9 @@ function SkillsCarousel() {
           </div>
         </div>
         {/* Left shadow gradient */}
-        <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
+        <div className="absolute top-0 left-0 w-16 h-full bg-linear-to-r from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
         {/* Right shadow gradient */}
-        <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
+        <div className="absolute top-0 right-0 w-16 h-full bg-linear-to-l from-base-100 via-base-100/80 to-transparent pointer-events-none z-10"></div>
       </div>
     </div>
   );

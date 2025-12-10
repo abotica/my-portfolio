@@ -1,3 +1,6 @@
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
+
 type SectionProps = {
   children: React.ReactNode;
   title?: string;
@@ -8,24 +11,26 @@ type SectionProps = {
 };
 
 function Section({ children, title, titleClassName, variant = "content", id, className }: SectionProps) {
-  const baseStyle = "w-full px-4 pt-16 scroll-mt-16 border-b border-base-content/10";
 
-  const variantStyle =
-    variant === "hero"
-      ? "flex flex-col items-center overflow-clip min-h-[calc(100vh_-_64px)]"
-      : variant === "content"
-      ? "min-h-screen py-16"
-      : "min-h-screen"; // full variant - same as content for now
+  const sectionStyle = twMerge(
+    clsx(
+      'w-full px-4 pt-16 scroll-mt-16 border-b border-base-content/10',
+      variant == "hero" && "flex flex-col items-center overflow-clip min-h-[calc(100vh_-_64px)]",
+      variant == "content" && "min-h-screen py-16",
+      variant == "full" && "min-h-screen" // full variant - same as content for now
+    ),
+    className ?? ''
+  );
 
-  const titleStyle = "text-base-content text-center pb-9";
+  const titleStyle = twMerge("text-base-content text-center pb-9", titleClassName ?? "" );
 
   return (
     <section
       id={id}
-      className={`${baseStyle} ${variantStyle} ${className ?? ""}`}
+      className={sectionStyle}
     >
       {title && variant !== "hero" && (
-        <h1 className={`${titleStyle} ${titleClassName ?? ""}`}>
+        <h1 className={titleStyle}>
           {title}
         </h1>
       )}

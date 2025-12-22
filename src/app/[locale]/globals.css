@@ -30,6 +30,11 @@
 		font-size: var(--text-2xl);
 		font-weight: var(--font-weight-normal);
 	}
+	
+	body {
+		background-position: center;
+  		padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+	}
 
 	/* Light theme (default) */
 	:root {

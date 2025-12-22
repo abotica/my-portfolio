@@ -18,10 +18,10 @@ export default async function Home() {
 			{/* Hero Section */}
 			<Section variant="hero" id="home">
 				<div className='flex flex-col items-center'>
-					<p className='text-lg sm:text-xl text-secondary font-medium mb-2'>{t('HeroSection.greeting')}</p>
-					<h1 className='text-5xl tablet:text-6xl desktop:text-7xl font-bold mb-6 bg-linear-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight'>{t('HeroSection.name')}</h1>
-					<h2 className='text-xl sm:text-2xl text-secondary font-semibold mb-6'>{t('HeroSection.job')}</h2>
-					<p className='text-lg sm:text-xl text-base-content/70 text-center max-w-2xl mx-auto mb-8 leading-relaxed'>{t('HeroSection.description')}</p>
+					<p className='text-xl text-secondary font-medium mb-2 tablet:text-3xl desktop:text-4xl'>{t('HeroSection.greeting')}</p>
+					<h1 className='text-5xl font-bold mb-6 bg-linear-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight tablet:text-7xl desktop:text-8xl'>{t('HeroSection.name')}</h1>
+					<h2 className='text-xl text-secondary font-semibold mb-6'>{t('HeroSection.job')}</h2>
+					<p className='text-lg text-base-content/70 text-center max-w-2xl mx-auto mb-8 leading-relaxed'>{t('HeroSection.description')}</p>
 				</div>
 				<div className='flex flex-col gap-4 w-full tablet:flex-row tablet:justify-center'>
 					<Link variant='primary' href='#projects' className='w-full tablet:w-max'>{t('HeroSection.primaryButton')}</Link>

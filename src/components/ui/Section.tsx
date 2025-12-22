@@ -15,7 +15,7 @@ function Section({ children, title, titleClassName, variant = "content", id, cla
   const sectionStyle = twMerge(
     clsx(
       'w-full px-4 pt-16 scroll-mt-16 border-b border-base-content/10',
-      variant == "hero" && "flex flex-col items-center overflow-clip min-h-[calc(100vh_-_64px)]",
+      variant == "hero" && "pt-32 flex flex-col items-center overflow-clip min-h-[calc(100vh_-_64px)]",
       variant == "content" && "min-h-screen py-16",
       variant == "full" && "min-h-screen" // full variant - same as content for now
     ),

@@ -1,5 +1,6 @@
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+
 import { Outfit } from 'next/font/google';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
@@ -19,6 +20,12 @@ export async function generateMetadata(params: Promise<{locale: string}>): Promi
     title: t('title'),
     description: t('description')
   };
+}
+
+// Check this!
+export const viewport: Viewport = {
+  userScalable: false,
+  viewportFit: 'cover',
 }
 
 const outfit = Outfit({

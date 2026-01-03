@@ -1,5 +1,5 @@
 import Link from '../ui/Link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
 
 import { GitHub, Instagram, LinkedIn, Mail } from '../ui/svgs';
@@ -95,7 +95,7 @@ async function Footer() {
 								<Mail className='w-5 h-5' />
 							</Link>
 						</div>
-						<Link href='https://www.ko-fi.com/abotica' target='_blank' className='mt-6 inline-flex items-center gap-2'>
+						{/* <Link href='https://www.ko-fi.com/abotica' target='_blank' className='mt-6 inline-flex items-center gap-2'>
 							<Image
 								className='w-10 h-auto'
 								src='/images/kofi.png'
@@ -104,7 +104,7 @@ async function Footer() {
 								height={32}
 							/>
 							<p className='font-medium'>Buy me a coffee</p>
-						</Link>
+						</Link> */}
 					</div>
 				</div>
 

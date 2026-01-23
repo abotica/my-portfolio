@@ -47,11 +47,6 @@ export async function getGithubRepos() {
 						description
 						url
 						homepageUrl
-						collaborators {
-							nodes {
-								login
-							}
-						}
 						primaryLanguage {
 							name
 						}

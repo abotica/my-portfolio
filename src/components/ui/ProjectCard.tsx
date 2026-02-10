@@ -47,7 +47,7 @@ async function ProjectCard({ ...props }: ProjectCardProps) {
 				<h3 className='text-lg tablet:text-xl font-semibold text-base-content'>
 					{props.title}
 				</h3>
-				<p className='text-sm text-base-content/70 leading-relaxed text-ellipsis line-clamp-3 desktop:line-clamp-2'>
+				<p className='text-sm text-base-content/70 leading-relaxed text-ellipsis line-clamp-3 desktop:line-clamp-2 h-12'>
 					{props.description ||
 						props.t('FeaturedProjectsSection.card.descriptionNotFound')}
 				</p>

@@ -28,9 +28,9 @@ export default async function Home() {
 					<Link variant='secondary' href='#contact-me' className='w-full tablet:w-max'>{t('HeroSection.secondaryButton')}</Link>
 				</div>
 			</Section>
-			<Section variant="content" id="about-me" title={t('AboutMeSection.title')}>
+			{/* <Section variant="content" id="about-me" title={t('AboutMeSection.title')}>
 				<p className='text-lg text-base-content/70 leading-relaxed'>{t('AboutMeSection.description')}</p>
-			</Section>
+			</Section> */}
 			<Section variant="content" id="skills" title={t('SkillsSection.title')}>
 				<SkillsCarousel />
 			</Section>
